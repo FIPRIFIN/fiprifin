@@ -30,8 +30,8 @@
 
 /* === Varianten === */
 .light {
-  background-color: #ffffff;
-  color: #0a0a0a;
+  background-color: var (--color-text);
+  color: var (--color-bg);
 }
 
 .light:hover {
@@ -40,8 +40,8 @@
 }
 
 .dark {
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: var (--color-bg);
+  color: var (--color-text);
   border: 1px solid #fff;
 }
 

@@ -1,6 +1,5 @@
 :root {
-  --color-bg: #121212;         /* Basis – tiefes, neutrales Dunkelgrau */
-  --color-surface: #0d0d0d;    /* Panels, Sections, Module – leicht heller */     /* feine Trennlinien */
+  --color-bg: #0d0d0d;         /* Basis – tiefes, neutrales Dunkelgrau */
   --color-text: #f5f5f5;       /* Primärtext */
   --color-subtext: #bcbcbc;    /* Sekundärtext */
   --color-accent: #3ea6ff;     /* optionaler Akzentton (z. B. Hover, Links) */
@@ -14,10 +13,6 @@
   /* === Schatten === */
   --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   --soft-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.35);
-
-  /* === Hintergrundtöne für Tiefe === */
-  --surface-dark: #181818;
-  --surface-darker: #121212;
 }
 
 body {

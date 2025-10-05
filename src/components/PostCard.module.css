@@ -1,5 +1,5 @@
 .card {
-  background: var(--surface-dark);
+  background: var(--color-bg);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 14px;
   padding: 1.75rem;
@@ -12,7 +12,7 @@
 }
 
 .card:hover {
-  background: var(--surface-darker);
+  background: var(--color-bg);
   border-color: rgba(255, 255, 255, 0.12);
   box-shadow: var(--soft-shadow-hover);
   transform: translateY(-6px);
