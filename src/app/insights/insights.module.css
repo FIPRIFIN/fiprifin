@@ -1,0 +1,412 @@
+/* ==========================================================================
+   INSIGHTS MODULE STYLES (FIPRIFIN)
+   Struktur:
+   1.  Layout (Container, Grid)
+   2.  Category View (Intro, Title, Grid)
+   3.  Insights Overview Page
+   4.  Category List (Kachelübersicht)
+   5.  Post Cards (Artikelkarten)
+   6.  Article Detail View (geöffneter Artikel)
+   7.  Responsive Design (optimiert & padding fixes)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. LAYOUT
+   ========================================================================== */
+
+.categoryContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem clamp(1rem, 4vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   2. CATEGORY VIEW (z. B. „Junge Familien“)
+   ========================================================================== */
+
+.categoryTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.categoryIntro {
+  background: var(--surface-dark);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--soft-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  line-height: 1.8;
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   3. INSIGHTS OVERVIEW PAGE (Startseite der Insights)
+   ========================================================================== */
+
+.insights-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem clamp(1rem, 4vw, 2rem);
+  color: var(--color-text);
+  box-sizing: border-box;
+}
+
+.insights-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.insights-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.insights-header p {
+  color: var(--color-subtext);
+  max-width: 700px;
+  margin: 0.75rem auto 0;
+  line-height: 1.6;
+}
+
+
+/* ==========================================================================
+   4. CATEGORY LIST (z. B. „Junge Familien“, „Studierende“)
+   ========================================================================== */
+
+.categoryList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categoryItem {
+  background-color: var(--surface-dark);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.categoryItem:hover {
+  border-color: rgba(62, 166, 255, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(62, 166, 255, 0.08);
+}
+
+.categoryLink {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.25s ease;
+}
+
+.categoryLink:hover {
+  color: var(--color-accent);
+}
+
+.categoryCount {
+  color: var(--color-subtext);
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+
+/* ==========================================================================
+   5. POST CARDS (Artikelübersicht)
+   ========================================================================== */
+
+.card {
+  background-color: var(--surface-dark);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--soft-shadow);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--soft-shadow-hover);
+  border-color: rgba(62, 166, 255, 0.3);
+}
+
+/* --- Bildbereich --- */
+.cardImageWrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.03);
+}
+
+/* --- Textinhalt --- */
+.cardContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.cardExcerpt {
+  color: var(--color-subtext);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.cardMeta {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+/* --- Link (Weiterlesen) --- */
+.cardLink {
+  color: var(--color-accent);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.cardLink:hover {
+  color: #63c3ff;
+}
+
+
+/* ==========================================================================
+   6. ARTICLE DETAIL VIEW (Einzelner geöffneter Artikel)
+   ========================================================================== */
+
+.postHeaderImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  object-fit: cover;
+  box-shadow: var(--soft-shadow);
+}
+
+.articleContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  color: var(--color-subtext);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.articleContent h2,
+.articleContent h3 {
+  color: var(--color-text);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.articleContent p {
+  margin-bottom: 1.25rem;
+}
+
+.articleContent ul,
+.articleContent ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+}
+
+.articleContent li {
+  margin-bottom: 0.5rem;
+}
+
+.articleContent blockquote {
+  background: var(--surface-dark);
+  border-left: 4px solid var(--color-accent);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.articleContent hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
+}
+
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (Mobile, Tablet, Desktop)
+   ========================================================================== */
+
+/* --- Tablets (≤ 992px) --- */
+@media (max-width: 992px) {
+  .categoryContainer {
+    padding: 1.5rem clamp(1rem, 4vw, 2rem);
+  }
+
+  .categoryIntro {
+    padding: 1.5rem;
+  }
+
+  .categoryTitle {
+    font-size: 1.8rem;
+  }
+
+  .postsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .insights-header h1 {
+    font-size: 2rem;
+  }
+
+  .articleContent {
+    font-size: 0.98rem;
+    padding: 0 1rem;
+  }
+}
+
+/* --- Smartphones (≤ 768px) --- */
+@media (max-width: 768px) {
+  .categoryContainer {
+    padding: 1.25rem clamp(1rem, 5vw, 2rem);
+  }
+
+  .categoryIntro {
+    padding: 1.25rem;
+  }
+
+  .categoryTitle {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .categoryIntro p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .postsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cardImageWrapper {
+    height: 180px;
+  }
+
+  .cardContent {
+    padding: 1.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardExcerpt {
+    font-size: 0.95rem;
+  }
+
+  .postHeaderImage {
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+
+  .articleContent {
+    padding: 0 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .articleContent h2 {
+    font-size: 1.4rem;
+  }
+
+  .articleContent h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- Extra Small (≤ 480px) --- */
+@media (max-width: 480px) {
+  .categoryTitle {
+    font-size: 1.4rem;
+  }
+
+  .cardImageWrapper {
+    height: 160px;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardExcerpt {
+    font-size: 0.9rem;
+  }
+
+  .cardLink {
+    font-size: 0.9rem;
+  }
+
+  .postHeaderImage {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .articleContent {
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,95 +1,53 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import Container from "@/components/Container";
+import Button from "@/components/Button";
+import styles from "./Home.module.css";
+import ButtonWrapper from "@/components/ButtonWrapper";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className={styles.main}>
+      <Container>
+        <section className={styles.section}>
+          <h1 className={styles.title}>Unser Auftrag</h1>
+          <p className={styles.text}>
+            FIPRIFIN steht für Klarheit in persönlichen Finanzen. Wir glauben,
+            dass finanzielle Stabilität nicht mit komplizierten Produkten
+            beginnt, sondern mit einfachen Prinzipien, die jeder verstehen und
+            umsetzen kann. Unser Auftrag ist es, junge Familien und moderne
+            Haushalte mit Wissen, Tools und Denkanstößen auszustatten – damit
+            sie selbstbestimmt, digital und ohne Umwege Entscheidungen treffen
+            können, die wirklich zu ihrem Leben passen.
+          </p>
+        </section>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className={styles.divider} />
+
+        <section className={styles.section}>
+          <h2 className={styles.subtitle}>Was wir machen</h2>
+          <p className={styles.text}>
+            Wir entwickeln Inhalte, Werkzeuge und Strukturen, die sofort im
+            Alltag helfen. Von einfachen Budgetplanern bis hin zu praxisnahen
+            E-Books – FIPRIFIN liefert Lösungen, die nicht in der Theorie stecken
+            bleiben. Alles ist digital, klar und leicht zugänglich, damit junge
+            Familien und moderne Haushalte direkt profitieren können. Unser Ziel:
+            Finanzen verständlich machen – Schritt für Schritt, ohne Umwege.
+          </p>
+        </section>
+
+        <div className={styles.divider} />
+
+        <section className={styles.section}>
+          <h2 className={styles.subtitle}>Unsere DNA</h2>
+          <p className={styles.text}>
+            Unsere DNA ist die Grundlage von FIPRIFIN – fünf Prinzipien, die
+            Finanzen verständlich, digital und alltagstauglich machen.
+          </p>
+          <ButtonWrapper>
+            <Button href="/dna">Mehr über unsere DNA</Button>
+          </ButtonWrapper>
+        </section>
+      </Container>
+    </main>
   );
 }

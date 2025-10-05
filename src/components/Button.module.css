@@ -1,0 +1,86 @@
+/* === BUTTON WRAPPER === */
+.buttonWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem; /* Abstand zwischen Buttons */
+  padding: 0 1rem; /* verhindert, dass Buttons am Rand kleben */
+  margin-top: 2rem;
+}
+
+/* optional unterschiedliche Ausrichtungen */
+.left {
+  justify-content: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* === Varianten === */
+.light {
+  background-color: #ffffff;
+  color: #0a0a0a;
+}
+
+.light:hover {
+  background-color: #d1d1d1;
+  transform: translateY(-1px);
+}
+
+.dark {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  border: 1px solid #fff;
+}
+
+.dark:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-1px);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .button {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    white-space: normal;
+  }
+
+  /* === Responsive Font Scaling === */
+@media (max-width: 480px) {
+  .button {
+    font-size: 0.85rem; /* etwas kleiner, bleibt aber lesbar */
+    padding: 0.8rem 1.4rem; /* leicht reduziert, damit der Button harmonisch bleibt */
+    display: block;
+    max-width: 90%; /* verhindert, dass er bis an den Rand geht */
+    font-size: 0.85rem;
+  }
+   .buttonWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .button {
+    font-size: 0.8rem; /* noch etwas kompakter auf sehr kleinen Geräten */
+    padding: 0.75rem 1.2rem;
+  }
+}
+
+}

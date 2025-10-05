@@ -1,0 +1,30 @@
+.buttonWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* Zentrierung */
+.center {
+  justify-content: center;
+}
+
+/* Alternative Ausrichtungen */
+.left {
+  justify-content: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+/* Mobile Layout */
+@media (max-width: 480px) {
+  .buttonWrapper {
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0 1rem;
+  }
+}
