@@ -1,8 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "@/app/insights/insights.module.css";
+import { PostMeta } from "@/lib/content"
 
-export default function PostCard({ post }: { post: any }) {
+interface PostCardProps {
+  post: PostMeta;
+}
+
+export default function PostCard({ post }: PostCardProps) {
   return (
     <article className={styles.card}>
       {post.image && (

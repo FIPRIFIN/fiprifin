@@ -1,5 +1,5 @@
 import styles from "./contact.module.css";
-import { Mail, Phone, MessageSquare } from "lucide-react";
+import { Mail, MessageSquare } from "lucide-react";
 
 export default function ContactPage() {
   return (

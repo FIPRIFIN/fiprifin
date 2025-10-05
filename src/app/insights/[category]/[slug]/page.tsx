@@ -6,8 +6,8 @@ import AffiliateBox from "@/components/AffiliateBox";
 import Link from "next/link";
 import NextImage from "next/image";
 import styles from "./../../insights.module.css";
-
-const Image = NextImage as unknown as React.FC<any>;
+import type { ImageProps } from "next/image";
+const Image = NextImage as unknown as React.FC<ImageProps>;
 
 
 export const dynamic = "force-static";
