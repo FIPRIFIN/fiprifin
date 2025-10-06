@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
+import { createPortal } from "react-dom";
 import Container from "./Container";
 import styles from "./Header.module.css";
 
@@ -68,27 +69,54 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <motion.header
-      className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}
-      initial={{ opacity: 0, y: -12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: [0.26, 1, 0.36, 1] }}
-    >
-      <Container>
-        <div className={styles.inner}>
-          {/* === Logo === */}
-          <button
-            className={styles.logo}
-            onClick={() => handleNavClick("/")}
-            aria-label="Zur Startseite"
-          >
-            <span className={styles.accent}>FI</span>RST<br />
-            <span className={styles.accent}>PRI</span>NCIPLE<br />
-            <span className={styles.accent}>FIN</span>ANCE
-          </button>
+  // === Portal Root for Nav (Client-side only) ===
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
-          {/* === Navigation === */}
+  return (
+    <>
+      <motion.header
+        className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}
+        initial={{ opacity: 0, y: -12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.26, 1, 0.36, 1] }}
+      >
+        <Container>
+          <div className={styles.inner}>
+            {/* === Logo === */}
+            <button
+              className={styles.logo}
+              onClick={() => handleNavClick("/")}
+              aria-label="Zur Startseite"
+            >
+              <span className={styles.accent}>FI</span>RST<br />
+              <span className={styles.accent}>PRI</span>NCIPLE<br />
+              <span className={styles.accent}>FIN</span>ANCE
+            </button>
+
+            {/* === Burger Button === */}
+            <button
+              className={styles.burger}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+            >
+              {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
+          </div>
+        </Container>
+
+        {/* === Scroll Progress Bar === */}
+        <motion.div
+          className={styles.scrollProgress}
+          style={{ scaleX }}
+          initial={{ scaleX: 0 }}
+          transition={{ type: "spring", stiffness: 120, damping: 20 }}
+        />
+      </motion.header>
+
+      {/* === Navigation via Portal === */}
+      {mounted &&
+        createPortal(
           <nav
             ref={navRef}
             className={`${styles.nav} ${menuOpen ? styles.open : ""}`}
@@ -106,26 +134,9 @@ export default function Header() {
                 </button>
               );
             })}
-          </nav>
-
-          {/* === Burger Button === */}
-          <button
-            className={styles.burger}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
-          >
-            {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
-        </div>
-      </Container>
-
-      {/* === Scroll Progress Bar === */}
-      <motion.div
-        className={styles.scrollProgress}
-        style={{ scaleX }}
-        initial={{ scaleX: 0 }}
-        transition={{ type: "spring", stiffness: 120, damping: 20 }}
-      />
-    </motion.header>
+          </nav>,
+          document.body
+        )}
+    </>
   );
 }
