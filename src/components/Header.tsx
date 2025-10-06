@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
-import { createPortal } from "react-dom";
 import Container from "./Container";
 import styles from "./Header.module.css";
 
@@ -21,6 +21,7 @@ const TAP_PULSE_DURATION = 250;
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
@@ -69,8 +70,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // === Portal Root for Nav (Client-side only) ===
-  const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
   return (
@@ -122,6 +121,15 @@ export default function Header() {
             className={`${styles.nav} ${menuOpen ? styles.open : ""}`}
             aria-label="Hauptnavigation"
           >
+            {/* === X zum Schließen (fix) === */}
+            <button
+              className={styles.closeButton}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Menü schließen"
+            >
+              <FiX size={26} />
+            </button>
+
             {NAV.map((item) => {
               const isActive = pathname === item.href;
               return (
