@@ -1,86 +1,106 @@
-/* === BUTTON WRAPPER === */
-.buttonWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem; /* Abstand zwischen Buttons */
-  padding: 0 1rem; /* verhindert, dass Buttons am Rand kleben */
-  margin-top: 2rem;
-}
-
-/* optional unterschiedliche Ausrichtungen */
-.left {
-  justify-content: flex-start;
-}
-
-.right {
-  justify-content: flex-end;
-}
-
+/* === BASE === */
 .button {
   display: inline-block;
-  padding: 0.9rem 1.8rem;
-  border-radius: 6px;
   font-weight: 600;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
   text-decoration: none;
-  transition: all 0.25s ease;
-  white-space: nowrap;
   text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  letter-spacing: 0.3px;
+  font-size: 1rem;
+  border: 1px solid transparent;
 }
 
-/* === Varianten === */
-.light {
-  background-color: var (--color-text);
-  color: var (--color-bg);
+/* === PRIMARY (accent gradient, smooth flow) === */
+.primary {
+  background: linear-gradient(100deg, #0072ff, #0099ff, #00b4ff);
+  background-size: 200% 200%;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 4px 16px rgba(0, 114, 255, 0.25),
+    inset 0 0 6px rgba(255, 255, 255, 0.08);
+  animation: gradientIdle 6s ease infinite;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.light:hover {
-  background-color: #d1d1d1;
+.primary:hover {
+  transform: translateY(-2px);
+  animation: gradientHover 2.5s ease infinite;
+  box-shadow:
+    0 6px 22px rgba(0, 114, 255, 0.35),
+    inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.primary:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0, 114, 255, 0.2);
+}
+
+/* === OUTLINE (Glass Outline) === */
+.outline {
+  background: rgba(20, 20, 20, 0.45);
+  color: var(--color-text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.outline:hover {
+  background: rgba(25, 25, 25, 0.55);
+  color: var(--color-accent);
+  border-color: rgba(0, 183, 255, 0.25);
   transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(0, 183, 255, 0.12);
 }
 
-.dark {
-  background-color: var (--color-bg);
-  color: var (--color-text);
-  border: 1px solid #fff;
+/* === Subtle gradient shimmer === */
+@keyframes gradientIdle {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.dark:hover {
-  background-color: #1a1a1a;
-  transform: translateY(-1px);
+@keyframes gradientHover {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* === Responsive === */
+/* === Glow Border (very subtle) === */
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(0,180,255,0.4), rgba(0,180,255,0.1));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.button:hover::before {
+  opacity: 0.25;
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .button {
     width: 100%;
-    display: block;
-    text-align: center;
     padding: 1rem 0;
-    white-space: normal;
+    font-size: 0.95rem;
+    border-radius: 8px;
   }
+}
 
-  /* === Responsive Font Scaling === */
 @media (max-width: 480px) {
   .button {
-    font-size: 0.85rem; /* etwas kleiner, bleibt aber lesbar */
-    padding: 0.8rem 1.4rem; /* leicht reduziert, damit der Button harmonisch bleibt */
-    display: block;
-    max-width: 90%; /* verhindert, dass er bis an den Rand geht */
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    max-width: 90%;
+    margin: 0 auto;
   }
-   .buttonWrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .button {
-    font-size: 0.8rem; /* noch etwas kompakter auf sehr kleinen Geräten */
-    padding: 0.75rem 1.2rem;
-  }
-}
-
 }

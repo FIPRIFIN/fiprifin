@@ -2,7 +2,7 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 4rem 1.5rem;
-  color: var (--color-text);
+  color: var(--color-text);
   background-color: var (--color-bg);;
   line-height: 1.7;
   font-size: 1rem;
@@ -14,7 +14,7 @@
 .datenschutz h2,
 .datenschutz h3,
 .datenschutz h4 {
-  color: var (--color-text);
+  color: var(--color-text);
   margin-top: 2rem;
   margin-bottom: 1rem;
   line-height: 1.3;
@@ -37,7 +37,7 @@
 
 .datenschutz p {
   margin-bottom: 1.2rem;
-  color: var (--color-subtext);
+  color: var(--color-subtext);
 }
 
 .datenschutz ul {
@@ -47,11 +47,11 @@
 
 .datenschutz li {
   margin-bottom: 0.5rem;
-  color: var (--color-subtext);
+  color: var(--color-subtext);
 }
 
 .datenschutz a {
-  color: var (--color-accent);
+  color: var(--color-accent);
   text-decoration: none;
   word-break: break-all;
 }

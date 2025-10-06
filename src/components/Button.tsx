@@ -1,14 +1,17 @@
-// src/components/Button.tsx
 import Link from "next/link";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
   href: string;
   children: React.ReactNode;
-  variant?: "light" | "dark";
+  variant?: "primary" | "outline";
 }
 
-export default function Button({ href, children, variant = "light" }: ButtonProps) {
+export default function Button({
+  href,
+  children,
+  variant = "primary",
+}: ButtonProps) {
   const classes = [styles.button, styles[variant]].join(" ");
 
   return (

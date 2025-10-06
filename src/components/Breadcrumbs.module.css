@@ -1,0 +1,117 @@
+.breadcrumbContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 10;
+  margin: 0 auto;
+  padding: 1rem 0;
+  overflow: hidden;
+}
+
+/* === Glassmorphism === */
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--color-subtext);
+  background: rgba(20, 20, 20, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  gap: 0.3rem;
+}
+
+.breadcrumb:hover {
+  background: rgba(25, 25, 25, 0.45);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.55);
+}
+
+/* === Links === */
+.breadcrumb a {
+  color: #e0e0e0;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s ease, opacity 0.25s ease;
+  opacity: 0.9;
+}
+
+.breadcrumb a:hover {
+  opacity: 1;
+  color: var(--color-accent);
+}
+
+/* === Aktuelle Seite === */
+.current {
+  color: var(--color-accent);
+  position: relative;
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* === Unterstreichung === */
+.breadcrumb a::after,
+.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: var(--accent-gradient);
+  transition: width 0.3s ease;
+}
+
+.breadcrumb a:hover::after {
+  width: 100%;
+}
+
+.current::after {
+  width: 100%;
+  opacity: 1;
+}
+
+/* === Trenner mit sichtbarem Glow === */
+.separator {
+  color: #bcbcbc;
+  opacity: 0.75;
+  margin-inline: 0.5rem;
+  filter: drop-shadow(0 0 2px rgba(0, 174, 255, 0.45))
+          drop-shadow(0 0 4px rgba(0, 174, 255, 0.25));
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+
+.breadcrumb:hover .separator {
+  filter: drop-shadow(0 0 4px rgba(0, 174, 255, 0.6))
+          drop-shadow(0 0 8px rgba(0, 174, 255, 0.4));
+  opacity: 0.85;
+}
+
+/* === Responsiveness === */
+@media (max-width: 768px) {
+  .breadcrumb {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .separator {
+    margin-inline: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumb {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 8px;
+  }
+
+  .separator {
+    margin-inline: 0.35rem;
+  }
+}

@@ -1,21 +1,64 @@
-import Link from "next/link";
+"use client";
+
+import { usePathname, useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import Container from "./Container";
 import styles from "./Footer.module.css";
+import { useState } from "react";
+
+const TAP_PULSE_DURATION = 250;
 
 export default function Footer() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [tapping, setTapping] = useState(false);
+
+  const handleNavClick = (href: string) => {
+    setTapping(true);
+    setTimeout(() => {
+      setTapping(false);
+      router.push(href);
+    }, TAP_PULSE_DURATION);
+  };
+
+  const links = [
+    { label: "Kontakt", href: "/contact" },
+    { label: "DNA", href: "/dna" },
+    { label: "Insights", href: "/insights" },
+    { label: "Impressum", href: "/impressum" },
+    { label: "Datenschutz", href: "/datenschutz" },
+  ];
+
   return (
-    <footer className={styles.footer}>
+    <motion.footer
+      className={styles.footer}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: [0.26, 1, 0.36, 1] }}
+    >
       <Container>
         <div className={styles.inner}>
+          {/* === LINKS === */}
           <div className={styles.links}>
-            <Link href="/contact">Kontakt</Link>
-            <Link href="/dna">DNA</Link>
-            <Link href="/insights">Insights</Link>
-            <Link href="/impressum">Impressum</Link>
-            <Link href="/datenschutz">Datenschutz</Link>
+            {links.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <button
+                  key={item.href}
+                  className={`${styles.linkButton} ${
+                    isActive ? styles.active : ""
+                  } ${tapping ? styles.tapping : ""}`}
+                  onClick={() => handleNavClick(item.href)}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
           </div>
 
+          {/* === SOCIALS === */}
           <div className={styles.socials}>
             <a
               href="https://instagram.com"
@@ -35,11 +78,16 @@ export default function Footer() {
             </a>
           </div>
 
+          {/* === Divider === */}
+          <div className={styles.divider} />
+
+          {/* === Copyright === */}
           <div className={styles.copy}>
-            © {new Date().getFullYear()} FIPRIFIN – First Principle Finance. Alle Rechte vorbehalten.
+            © {new Date().getFullYear()} FIPRIFIN – First Principle Finance. Alle
+            Rechte vorbehalten.
           </div>
         </div>
       </Container>
-    </footer>
+    </motion.footer>
   );
 }
