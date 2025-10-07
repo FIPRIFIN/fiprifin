@@ -22,6 +22,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
@@ -33,6 +34,14 @@ export default function Header() {
     damping: 18,
     restDelta: 0.001,
   });
+
+  // === Detect Mobile View ===
+  useEffect(() => {
+    const checkViewport = () => setIsMobile(window.innerWidth <= 768);
+    checkViewport();
+    window.addEventListener("resize", checkViewport);
+    return () => window.removeEventListener("resize", checkViewport);
+  }, []);
 
   // === Navigation click handler ===
   const handleNavClick = (href: string) => {
@@ -72,6 +81,39 @@ export default function Header() {
 
   useEffect(() => setMounted(true), []);
 
+  // === NAVIGATION ELEMENT ===
+  const navContent = (
+    <nav
+      ref={navRef}
+      className={`${styles.nav} ${menuOpen ? styles.open : ""}`}
+      aria-label="Hauptnavigation"
+    >
+      {/* Close Button nur im Mobile */}
+      {isMobile && (
+        <button
+          className={styles.closeButton}
+          onClick={() => setMenuOpen(false)}
+          aria-label="Menü schließen"
+        >
+          <FiX size={26} />
+        </button>
+      )}
+
+      {NAV.map((item) => {
+        const isActive = pathname === item.href;
+        return (
+          <button
+            key={item.href}
+            onClick={() => handleNavClick(item.href)}
+            className={`${styles.link} ${isActive ? styles.active : ""}`}
+          >
+            {item.label}
+          </button>
+        );
+      })}
+    </nav>
+  );
+
   return (
     <>
       <motion.header
@@ -93,14 +135,19 @@ export default function Header() {
               <span className={styles.accent}>FIN</span>ANCE
             </button>
 
-            {/* === Burger Button === */}
-            <button
-              className={styles.burger}
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
-            >
-              {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-            </button>
+            {/* === Navigation Desktop Inline === */}
+            {!isMobile && navContent}
+
+            {/* === Burger Button (nur Mobile sichtbar) === */}
+            {isMobile && (
+              <button
+                className={styles.burger}
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+              >
+                {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+              </button>
+            )}
           </div>
         </Container>
 
@@ -113,38 +160,8 @@ export default function Header() {
         />
       </motion.header>
 
-      {/* === Navigation via Portal === */}
-      {mounted &&
-        createPortal(
-          <nav
-            ref={navRef}
-            className={`${styles.nav} ${menuOpen ? styles.open : ""}`}
-            aria-label="Hauptnavigation"
-          >
-            {/* === X zum Schließen (fix) === */}
-            <button
-              className={styles.closeButton}
-              onClick={() => setMenuOpen(false)}
-              aria-label="Menü schließen"
-            >
-              <FiX size={26} />
-            </button>
-
-            {NAV.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <button
-                  key={item.href}
-                  onClick={() => handleNavClick(item.href)}
-                  className={`${styles.link} ${isActive ? styles.active : ""}`}
-                >
-                  {item.label}
-                </button>
-              );
-            })}
-          </nav>,
-          document.body
-        )}
+      {/* === Mobile Navigation über Portal === */}
+      {mounted && isMobile && createPortal(navContent, document.body)}
     </>
   );
 }
