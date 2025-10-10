@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 interface ButtonProps {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "outline";
+  variant?: "primary" | "secondary";
 }
 
 export default function Button({

@@ -1,11 +1,14 @@
-:root {
-  --color-bg: #0d0d0d;         /* Basis – tiefes, neutrales Dunkelgrau */
-  --color-text: #f5f5f5;       /* Primärtext */
-  --color-subtext: #bcbcbc;    /* Sekundärtext */
-  --color-accent: #3ea6ff;     /* optionaler Akzentton (z. B. Hover, Links) */
-}
+/* ===========================
+   GLOBAL STYLES – VEROSOMA CD V1
+=========================== */
 
 :root {
+  /* === Farbarchitektur === */
+  --color-bg: #0d0d0d;          /* Basis – tiefes neutrales Dunkelgrau */
+  --color-text: #f5f5f5;        /* Primärtext */
+  --color-subtext: #bcbcbc;     /* Sekundärtext */
+  --color-accent: #3ea6ff;      /* Akzentfarbe für Links, Hover, Buttons */
+
   /* === Farbverläufe (Accents) === */
   --accent-gradient: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
   --accent-gradient-hover: linear-gradient(90deg, #00e6a8 0%, #00b4ff 100%);
@@ -13,8 +16,23 @@
   /* === Schatten === */
   --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   --soft-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.35);
+
+  /* === Oberflächenfarben === */
+  --color-surface: rgba(20, 20, 20, 0.55);
+  --color-border: rgba(255, 255, 255, 0.06);
+
+  /* === Spacing & Radien === */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
+  --radius-base: 4px;
+  --radius-large: 8px;
 }
 
+/* ===========================
+   BODY & TYPOGRAPHIE
+=========================== */
 body {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   color: var(--color-text);
@@ -26,12 +44,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Harmonischere Absätze */
+/* Absätze */
 p {
   color: var(--color-subtext);
+  margin-bottom: var(--space-2);
+  max-width: 70ch;
 }
 
-/* Globale Links */
+/* Überschriften */
+h1, h2, h3, h4, h5 {
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+}
+
+/* ===========================
+   LINKS
+=========================== */
 a {
   color: var(--color-text);
   text-decoration: none;
@@ -39,28 +70,42 @@ a {
 }
 
 a:hover {
-  opacity: 0.8;
+  opacity: 0.85;
   color: var(--color-accent);
 }
 
-/* Einheitliche Module (z. B. Sections) */
+/* ===========================
+   SECTIONS / MODULE
+=========================== */
 section {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 12px;
+  box-shadow: var(--soft-shadow);
+  backdrop-filter: blur(14px) saturate(1.3) brightness(1.3);
+  padding: var(--space-4) var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
-/* Übergangsoptimierung */
-main, [data-animate-root] {
-  will-change: opacity, transform;
-  contain: paint;
+/* ===========================
+   SCROLL & MOTION
+=========================== */
+html {
+  scroll-behavior: smooth;
 }
 
-
-/* System Motion Respect */
+/* Motion-Respect → sanfter: Hover bleibt erhalten */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  .motion-optional {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* ===========================
+   PERFORMANCE / RENDER HINTS
+=========================== */
+main, [data-animate-root] {
+  will-change: opacity, transform;
+  contain: paint;
 }

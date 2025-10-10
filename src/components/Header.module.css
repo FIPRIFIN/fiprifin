@@ -67,19 +67,20 @@
   text-align: left;
   font-weight: 700;
   line-height: 1.1;
-  font-size: 1.35rem;
-  letter-spacing: 0.5px;
+  font-size: 1.4rem; /* leicht angepasst für Verosoma */
+  letter-spacing: 0.4px;
   text-decoration: none;
-  color: #bdbdbd;
-  text-transform: uppercase;
+  color: var(--color-text);
+  text-transform: none; /* CD: keine Caps */
   background: none;
   border: none;
   cursor: pointer;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease, color 0.25s ease;
 }
 
 .logo:hover {
-  opacity: 0.8;
+  opacity: 0.85;
+  color: var(--color-accent);
 }
 
 .accent {

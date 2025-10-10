@@ -56,12 +56,7 @@ export default function Header() {
     if (!menuOpen) return;
     const handleOutside = (e: MouseEvent | TouchEvent) => {
       const navEl = navRef.current;
-      const burgerEl = document.querySelector(`.${styles.burger}`);
-      if (
-        navEl?.contains(e.target as Node) ||
-        burgerEl?.contains(e.target as Node)
-      )
-        return;
+      if (navEl?.contains(e.target as Node)) return;
       setMenuOpen(false);
     };
     document.addEventListener("mousedown", handleOutside);
@@ -88,8 +83,8 @@ export default function Header() {
       className={`${styles.nav} ${menuOpen ? styles.open : ""}`}
       aria-label="Hauptnavigation"
     >
-      {/* Close Button nur im Mobile */}
-      {isMobile && (
+      {/* Nur EIN Schließen-Button (oben rechts im Menü) */}
+      {isMobile && menuOpen && (
         <button
           className={styles.closeButton}
           onClick={() => setMenuOpen(false)}
@@ -124,28 +119,26 @@ export default function Header() {
       >
         <Container>
           <div className={styles.inner}>
-            {/* === Logo === */}
+            {/* === Branding === */}
             <button
               className={styles.logo}
               onClick={() => handleNavClick("/")}
               aria-label="Zur Startseite"
             >
-              <span className={styles.accent}>FI</span>RST<br />
-              <span className={styles.accent}>PRI</span>NCIPLE<br />
-              <span className={styles.accent}>FIN</span>ANCE
+              Verosoma
             </button>
 
             {/* === Navigation Desktop Inline === */}
             {!isMobile && navContent}
 
-            {/* === Burger Button (nur Mobile sichtbar) === */}
-            {isMobile && (
+            {/* === Burger nur anzeigen, wenn geschlossen === */}
+            {isMobile && !menuOpen && (
               <button
                 className={styles.burger}
-                onClick={() => setMenuOpen(!menuOpen)}
-                aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+                onClick={() => setMenuOpen(true)}
+                aria-label="Menü öffnen"
               >
-                {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+                <FiMenu size={24} />
               </button>
             )}
           </div>
