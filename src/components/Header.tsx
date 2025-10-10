@@ -125,7 +125,7 @@ export default function Header() {
               onClick={() => handleNavClick("/")}
               aria-label="Zur Startseite"
             >
-              VEORSOMA
+              VEROSOMA
             </button>
 
             {/* === Navigation Desktop Inline === */}
