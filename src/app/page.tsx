@@ -10,7 +10,7 @@ export default function Home() {
         <section className={styles.hero}>
           <div className={styles.heroVisual}>
             <img
-              src="/images/Verosoma_Budget_Visual_Concept.png"
+              src="/images/VerosomaBudgetCover.svg"
               alt="Verosoma Budget Cover"
               className={styles.heroImage}
             />

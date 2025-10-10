@@ -6,8 +6,13 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
-  title: "FIPRIFIN",
-  description: "Finanzen verstehen. Klar. Digital.",
+  title: "Verosoma",
+  description: "Struktur schafft Freiheit",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

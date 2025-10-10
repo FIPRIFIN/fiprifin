@@ -67,8 +67,8 @@
   text-align: left;
   font-weight: 700;
   line-height: 1.1;
-  font-size: 1.4rem; /* leicht angepasst für Verosoma */
-  letter-spacing: 0.4px;
+  font-size: clamp(1.8rem, 4vw, 3.2rem); /* leicht angepasst für Verosoma */
+  letter-spacing: 0.03em;
   text-decoration: none;
   color: var(--color-text);
   text-transform: none; /* CD: keine Caps */
@@ -80,7 +80,6 @@
 
 .logo:hover {
   opacity: 0.85;
-  color: var(--color-accent);
 }
 
 .accent {
