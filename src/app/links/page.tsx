@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Globe, Brain, Mail, Scale, Shield } from "lucide-react";
+import { Globe, Brain, Scale, Shield } from "lucide-react";
 import { SiInstagram } from "react-icons/si";
 import styles from "./links.module.css";
 import Image from "next/image";
@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
 export default function LinksPage() {
   const links = [
     { href: "/", label: "Website", icon: <Globe /> },
