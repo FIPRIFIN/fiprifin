@@ -1,9 +1,18 @@
+
 {
   "redirects": [
     {
-      "source": "/",
-      "destination": "https://verosoma.com",
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "fiprifin.com" }],
+      "destination": "https://verosoma.com/:1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.fiprifin.com" }],
+      "destination": "https://verosoma.com/:1",
       "permanent": true
     }
   ]
 }
+
