@@ -7,6 +7,8 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import Container from "./Container";
 import styles from "./Header.module.css";
+import Image from "next/image";
+
 
 const NAV = [
   { label: "Startseite", href: "/" },
@@ -125,10 +127,13 @@ export default function Header() {
               onClick={() => handleNavClick("/")}
               aria-label="Zur Startseite"
             >
-              <img 
+              <Image 
                 src="/images/MasterTransCropped.svg"
                 alt="Verosoma Logo"
                 className={styles.logoImage}
+                width={200}
+                height={200}
+                unoptimized
               />
             </button>
 
