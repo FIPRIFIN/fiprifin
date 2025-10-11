@@ -1,6 +1,6 @@
 .breadcrumbContainer {
   position: sticky;
-  top: 80px;
+  top: clamp(6.4rem, 6.8vw, 4.4rem);
   display: flex;
   justify-content: center;
   width: 100%;
@@ -65,7 +65,7 @@
 
 @supports (-webkit-touch-callout: none) {
   .breadcrumbContainer {
-    top: 74.5px; 
+    top: clamp(6.3rem, 6.8vw, 4.3rem);
   }
 }
 
