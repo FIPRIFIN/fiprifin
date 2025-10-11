@@ -35,7 +35,7 @@ export default function Home() {
         >
           <div className={styles.coverVisual}>
             <Image
-              src="/images/produktcover/ProduktCoverBalance.svg.svg"
+              src="/images/produktcover/TestProduktBalancesvg.svg"
               alt="Produktcover von Verosoma Budget – digitales Haushaltsbuch Tool für Familien"
               className={styles.coverImage}
               width={560}
@@ -80,7 +80,7 @@ export default function Home() {
         >
           <div className={styles.coverVisual}>
             <Image
-              src="/images/produktcover/ProduktCoverFlow.svg.svg"
+              src="/images/produktcover/TestProduktFlowsvg.svg"
               alt="Produktcover von Verosoma Flow – digitales Finanzcoaching Tool (Coming Soon)"
               className={styles.coverImage}
               width={460}
