@@ -22,6 +22,7 @@ export default function Home() {
           </div>
 
           <div className={styles.heroContent}>
+            {/* Visually hidden for better SEO */}
              <h1 className="visuallyHidden">
               Verosoma Budget – das digitale Haushaltsbuch und Finanzplaner für Familien
             </h1>
