@@ -1,7 +1,17 @@
 {
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "https://www.fiprifin.com/(.*)",
+      "destination": "https://verosoma.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "https://fiprifin.com/(.*)",
+      "destination": "https://verosoma.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "https://www.verosoma.com/(.*)",
       "destination": "https://verosoma.com/$1",
       "permanent": true
     }

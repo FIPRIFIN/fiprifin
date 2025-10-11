@@ -8,6 +8,10 @@ import Footer from '../components/Footer';
 export const metadata: Metadata = {
   title: "Verosoma",
   description: "Struktur schafft Freiheit",
+  metadataBase: new URL("https://verosoma.com"),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
