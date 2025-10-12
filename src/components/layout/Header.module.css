@@ -4,51 +4,43 @@
   box-shadow: none !important;
 }
 
-/* === HEADER BASIS (verbesserter Glass Fix) === */
+/* === HEADER BASIS (Glass System integriert) === */
 .header {
   position: sticky;
   top: 0;
-  overflow-x: hidden;
-  overflow-y: visible;
   z-index: 50;
-  background: color-mix(in srgb, var(--color-surface), var(--color-border-hover));
-  backdrop-filter: blur(14px) saturate(1.3) brightness(1.3);
-  -webkit-backdrop-filter: blur(14px) saturate(1.3) brightness(1.3);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  overflow-x: hidden;
+
+  /* 🔧 Glas-System */
+  background:
+    linear-gradient(var(--glass-tint, rgba(0,0,0,0.18)), var(--glass-tint, rgba(0,0,0,0.18))),
+    var(--glass-bg, rgba(18,18,18,0.88));
+
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation)) brightness(var(--glass-brightness));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation)) brightness(var(--glass-brightness));
+
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+
   padding: 0.4rem 0.5rem;
   color: var(--color-text);
   transition:
     background 0.3s ease,
     box-shadow 0.3s ease,
     padding 0.3s ease,
-    backdrop-filter 0.3s ease;
-}
-
-.header:hover {
-  background: rgba(18, 18, 18, 0.85);
-}
-
-/* === SCROLLED VARIANTE === */
-.header.scrolled {
-  background: color-mix(in srgb, var(--color-surface), var(--color-border-hover));
-  backdrop-filter: blur(20px) saturate(1.4) brightness(1.25);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4) brightness(1.25);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
+    backdrop-filter 0.2s ease;
 }
 
 /* === Safari/iOS Brightness Boost === */
 @supports (-webkit-backdrop-filter: none) {
   .header {
-    backdrop-filter: blur(14px) saturate(1.4) brightness(1.55);
-    -webkit-backdrop-filter: blur(14px) saturate(1.4) brightness(1.55);
-    background: var(--color-surface);
-  }
-
-  .header.scrolled {
-    backdrop-filter: blur(22px) saturate(1.5) brightness(1.45);
-    -webkit-backdrop-filter: blur(22px) saturate(1.5) brightness(1.45);
-    background: var(--color-surface);
+    backdrop-filter: blur(calc(var(--glass-blur) + 4px))
+      saturate(calc(var(--glass-saturation) + 0.1))
+      brightness(calc(var(--glass-brightness) + 0.15));
+    -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 4px))
+      saturate(calc(var(--glass-saturation) + 0.1))
+      brightness(calc(var(--glass-brightness) + 0.15));
+    background: var(--glass-bg);
   }
 }
 
@@ -87,7 +79,6 @@
   opacity: 0.85;
   transform: scale(1.02);
 }
-
 
 .accent {
   color: var(--color-accent);
@@ -219,9 +210,14 @@
     right: 0;
     height: 100vh;
     width: 75%;
-    background: rgba(15, 15, 15, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: var(--glass-bg);
+    backdrop-filter: blur(calc(var(--glass-blur) / 1.2))
+      saturate(calc(var(--glass-saturation) + 0.1))
+      brightness(calc(var(--glass-brightness) + 0.1));
+    -webkit-backdrop-filter: blur(calc(var(--glass-blur) / 1.2))
+      saturate(calc(var(--glass-saturation) + 0.1))
+      brightness(calc(var(--glass-brightness) + 0.1));
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -239,9 +235,13 @@
     transform: translateX(0);
     opacity: 1;
     pointer-events: all;
-    background: rgba(15, 15, 15, 0.5);
-    backdrop-filter: blur(20px) saturate(1.4) brightness(1.35);
-    -webkit-backdrop-filter: blur(20px) saturate(1.4) brightness(1.35);
+    background: var(--glass-bg);
+    backdrop-filter: blur(calc(var(--glass-blur) + 4px))
+      saturate(calc(var(--glass-saturation) + 0.1))
+      brightness(calc(var(--glass-brightness) + 0.15));
+    -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 4px))
+      saturate(calc(var(--glass-saturation) + 0.1))
+      brightness(calc(var(--glass-brightness) + 0.15));
     box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
   }
 

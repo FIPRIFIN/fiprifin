@@ -119,6 +119,14 @@ main,
   /* === Oberflächenfarben === */
   --color-surface: rgba(255, 255, 255, 0.85);
   --color-border: rgba(0, 0, 0, 0.06);
+
+    /* === Glass System === */
+  --glass-bg: rgba(256, 256, 256, 0.98);
+  --glass-blur: 22px;
+  --glass-saturation: 1.35;
+  --glass-brightness: 1.05;
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* === DARK === */
@@ -149,6 +157,16 @@ main,
   /* === Oberflächenfarben === */
   --color-surface: rgba(20, 20, 20, 0.55);
   --color-border: rgba(255, 255, 255, 0.06);
+
+   /* === Glass System === */
+ 
+  --glass-bg: rgba(15, 15, 15, 0.93);     /* dichterer Grundton */
+  --glass-blur: 23px;                     /* deutlich mehr Blur → weicher Lichtstreuungseffekt */
+  --glass-saturation: 1.2;                /* etwas weniger Farbe, natürlicher Look */
+  --glass-brightness: 0.9;               /* leicht aufgehellt für Tiefe */
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+
 
   /* === Oberflächenfarben === */
   --color-surface-hover: rgba(0, 180, 255, 0.35);
