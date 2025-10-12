@@ -5,11 +5,15 @@
 
 /* === Base === */
 .text {
-  margin: 0;
+  margin: 0 0 var(--space-2) 0;
   line-height: 1.8;
   text-wrap: pretty;
   max-width: 70ch;
   transition: color 0.25s ease;
+}
+
+.text + .text {
+  margin-top: var(--space-1);
 }
 
 /* =======================================

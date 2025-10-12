@@ -14,6 +14,11 @@
   word-break: break-word;
 }
 
+.inlineLink:hover {
+  opacity: 0.85;
+  text-decoration-thickness: 2px;
+}
+
 /* ============================================
    🎨 VARIANTS (Dark Theme Default)
 ============================================ */

@@ -10,7 +10,7 @@ interface HeadlineProps {
   /**
    * Visuelle Variante – steuert Farb- & Akzentstil
    */
-  variant?: "default" | "accent" | "gradient";
+  variant?: "default" | "accent" | "gradient" | "light-default" | "light-accent" | "light-gradient";
 
   /**
    * Textausrichtung

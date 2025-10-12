@@ -1,0 +1,30 @@
+/* ============================================
+   📚 VEROSOMA TEXT SECTION
+   Mobile First – CD-konform
+============================================ */
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Tone Variants */
+.light {
+  color: var(--color-light-text);
+}
+
+.dark {
+  color: var(--color-text);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .textSection {
+    gap: var(--space-4);
+  }
+}

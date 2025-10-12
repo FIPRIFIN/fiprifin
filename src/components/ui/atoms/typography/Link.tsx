@@ -15,7 +15,7 @@ interface LinkProps {
   /**
    * Visuelle Variante
    */
-  variant?: "default" | "accent" | "muted" | "underline";
+  variant?: "default" | "accent" | "muted" | "underline" | "light-default" | "light-accent" | "light-muted" | "light-underline";
 
   /**
    * Verhalten: extern oder intern

@@ -1,46 +1,58 @@
-import styles from "./impressum.module.css";
+import TextSection from "@/components/Sections/TextSection/TextSection";
+import { Text, Headline, InlineLink, HiddenHeadline } from "@/components/ui/atoms/typography";
+import BaseSection from "@/components/layout/BaseSection";
 
 export default function ImpressumPage() {
   return (
-    <section className={styles.impressum}>
-      <h1>Impressum</h1>
+    <BaseSection background="transparent">
+      <HiddenHeadline
+        text="Impressum – Verosoma"
+        id="Verosoma-Impressum-heading"
+       />
+      <TextSection
+        id="impressum"
+        title="Impressum"
+        description="Angaben gemäß § 5 TMG"
+      >
+        <Headline level="h2" size="md" variant="light-default">Impressum</Headline>
 
-      <p>
-        Paul Kaiser<br />
-        Paul Kaiser &ndash; FIPRIFIN (First Principle Finance)<br />
-        Oberer Weiler 3<br />
-        71577 Großerlach
-      </p>
+        <Text variant="light-default">
+          Paul Kaiser<br />
+          Paul Kaiser &ndash; FIPRIFIN (First Principle Finance)<br />
+          Oberer Weiler 3<br />
+          71577 Großerlach
+        </Text>
 
-      <h2>Kontakt</h2>
-      <p>
-        Telefon: <a href="tel:01739069171">0173&nbsp;9069171</a><br />
-        E-Mail:{" "}
-        <a href="mailto:Admin@fiprifin.com">Admin@fiprifin.com</a>
-      </p>
+        <Headline level="h2" size="md" variant="light-default">Kontakt</Headline>
+        <Text variant="light-default">
+          Telefon: <InlineLink href="tel:01739069171">0173&nbsp;9069171</InlineLink><br />
+          E-Mail:{" "}
+          <InlineLink href="mailto:Admin@fiprifin.com">Admin@fiprifin.com</InlineLink>
+        </Text>
 
-      <h2>Verbraucher&shy;streit&shy;beilegung / Universal&shy;schlichtungs&shy;stelle</h2>
-      <p>
-        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-        Verbraucherschlichtungsstelle teilzunehmen.
-      </p>
+        <Headline level="h2" size="md" variant="light-default">Verbraucher&shy;streit&shy;beilegung / Universal&shy;schlichtungs&shy;stelle</Headline>
+        <Text variant="light-default">
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+          Verbraucherschlichtungsstelle teilzunehmen.
+        </Text>
 
-      <h2>Zentrale Kontaktstelle nach dem Digital Services Act (DSA)</h2>
-      <p>
-        Unsere zentrale Kontaktstelle für Nutzer und Behörden nach Art. 11, 12 DSA erreichen Sie wie folgt:
-      </p>
-      <p>
-        E-Mail: <a href="mailto:Admin@fiprifin.com">Admin@fiprifin.com</a><br />
-        Telefon: <a href="tel:01739069171">0173&nbsp;9069171</a>
-      </p>
-      <p>Die für den Kontakt zur Verfügung stehenden Sprachen sind: Deutsch, Englisch.</p>
+        <Headline level="h2" size="md" variant="light-default">Zentrale Kontaktstelle nach dem Digital Services Act (DSA)</Headline>
+        <Text variant="light-default">
+          Unsere zentrale Kontaktstelle für Nutzer und Behörden nach Art. 11, 12 DSA erreichen Sie wie folgt:
+        </Text>
+        <Text variant="light-default">
+          E-Mail: <InlineLink href="mailto:Admin@fiprifin.com">Admin@fiprifin.com</InlineLink><br />
+          Telefon: <InlineLink href="tel:01739069171">0173&nbsp;9069171</InlineLink>
+        </Text>
+        <Text variant="light-default">Die für den Kontakt zur Verfügung stehenden Sprachen sind: Deutsch, Englisch.</Text>
 
-      <p>
-        Quelle:{" "}
-        <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">
-          eRecht24
-        </a>
-      </p>
-    </section>
+        <Text variant="light-default">
+          Quelle:{" "}
+          <InlineLink href="https://www.e-recht24.de" variant="light-accent">
+            eRecht24
+          </InlineLink>
+        </Text>
+      </TextSection>
+    </BaseSection>
   );
 }

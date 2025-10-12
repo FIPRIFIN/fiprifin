@@ -11,7 +11,7 @@ interface TextProps {
   /**
    * Farbvariante
    */
-  variant?: "default" | "muted" | "accent" | "error" | "success";
+  variant?: "default" | "muted" | "accent" | "error" | "success" | "light-default" | "light-muted" | "light-accent";
 
   /**
    * Textgröße

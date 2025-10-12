@@ -20,7 +20,7 @@ interface InlineLinkProps {
   /**
    * Visuelle Variante
    */
-  variant?: "default" | "accent" | "muted";
+  variant?: "default" | "accent" | "muted" | "light-default" | "light-accent" | "light-muted";
 
   /**
    * Optionale Klasse
