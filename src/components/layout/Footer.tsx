@@ -6,6 +6,7 @@ import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import Container from "@/components/layout/Container";
 import styles from "./Footer.module.css";
 import { useState } from "react";
+import ThemeSwitch from "../ui/ThemeSwitch";
 
 const TAP_PULSE_DURATION = 250;
 
@@ -77,6 +78,7 @@ export default function Footer() {
               <FaLinkedin size={22} />
             </a>
           </div>
+          <ThemeSwitch />
 
           {/* === Divider === */}
           <div className={styles.divider} />

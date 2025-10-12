@@ -3,31 +3,7 @@
 =========================== */
 
 :root {
-  /* === Farbarchitektur === */
-  --color-bg: #0d0d0d;          /* Basis – tiefes neutrales Dunkelgrau */
-  --color-text: #f5f5f5;        /* Primärtext */
-  --color-subtext: #bcbcbc;     /* Sekundärtext */
-  --color-accent: #3ea6ff;      /* Akzentfarbe für Links, Hover, Buttons */
-  --color-error: #ff4d4f;       /* Fehlerfarbe */
-  --color-success: #4cd964;     /* Erfolgsfarbe */
-
-   /* === Farbarchitektur (Light Surfaces) === */
-  --color-light-text: #111111;       /* Primärtext auf hellen Flächen */
-  --color-light-subtext: #333333;    /* Sekundärtext auf hellen Flächen */
-  --color-light-accent: #0066cc;     /* Dezenter Akzent auf Weißflächen */
-  --color-light-border: rgba(0, 0, 0, 0.08); /* Rahmen auf hell */
-
-  /* === Farbverläufe (Accents) === */
-  --accent-gradient: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
-  --accent-gradient-hover: linear-gradient(90deg, #00e6a8 0%, #00b4ff 100%);
-
-  /* === Schatten === */
-  --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  --soft-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.35);
-
-  /* === Oberflächenfarben === */
-  --color-surface: rgba(20, 20, 20, 0.55);
-  --color-border: rgba(255, 255, 255, 0.06);
+ 
 
   /* === Spacing & Radien === */
   --space-1: 0.5rem;
@@ -108,7 +84,133 @@ main,
   contain: paint;
 }
 
-/* ===========================
-   ACCESSIBILITY / VISUAL-HIDDEN
-=========================== */
+/* ===========================================
+   🎨 VEROSOMA MOOD THEMES
+   Steuerung über data-theme="..."
+   (z. B. <html data-theme="calm">)
+=========================================== */
 
+/* === LIGHT (default) === */
+:root,
+[data-theme="light"] {
+
+  /* === Farbarchitektur === */
+  --color-bg: #f8fafc;              /* Sanftes Weiß mit leichtem Blaustich */
+  --color-text: #111111;            /* Primärtext – neutral dunkel */
+  --color-subtext: #444444;         /* Sekundärtext – weichgrau */
+  --color-accent: #3ea6ff;          /* Akzentfarbe bleibt Markenblau */
+  --color-error: #e74c3c;
+  --color-success: #2ecc71;
+
+  /* === Farbarchitektur (Dark Surfaces) === */
+  --color-light-text: #111111;
+  --color-light-subtext: #333333;
+  --color-light-accent: #0066cc;
+  --color-light-border: rgba(0, 0, 0, 0.08);
+
+  /* === Farbverläufe === */
+  --accent-gradient: linear-gradient(90deg, #00b4ff 0%, #0072ff 100%);
+  --accent-gradient-hover: linear-gradient(90deg, #00e6a8 0%, #00b4ff 100%);
+
+  /* === Schatten === */
+  --soft-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --soft-shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.12);
+
+  /* === Oberflächenfarben === */
+  --color-surface: rgba(255, 255, 255, 0.85);
+  --color-border: rgba(0, 0, 0, 0.06);
+}
+
+/* === DARK === */
+[data-theme="dark"] {
+
+  /* === Farbarchitektur === */
+  --color-bg: #0d0d0d;          /* Basis – tiefes neutrales Dunkelgrau */
+  --color-text: #f5f5f5;        /* Primärtext */
+  --color-subtext: #bcbcbc;     /* Sekundärtext */
+  --color-accent: #3ea6ff;      /* Akzentfarbe für Links, Hover, Buttons */
+  --color-error: #ff4d4f;       /* Fehlerfarbe */
+  --color-success: #4cd964;     /* Erfolgsfarbe */
+
+   /* === Farbarchitektur (Light Surfaces) === */
+  --color-light-text: #111111;       /* Primärtext auf hellen Flächen */
+  --color-light-subtext: #333333;    /* Sekundärtext auf hellen Flächen */
+  --color-light-accent: #0066cc;     /* Dezenter Akzent auf Weißflächen */
+  --color-light-border: rgba(0, 0, 0, 0.08); /* Rahmen auf hell */
+
+  /* === Farbverläufe (Accents) === */
+  --accent-gradient: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+  --accent-gradient-hover: linear-gradient(90deg, #00e6a8 0%, #00b4ff 100%);
+
+  /* === Schatten === */
+  --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --soft-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.35);
+
+  /* === Oberflächenfarben === */
+  --color-surface: rgba(20, 20, 20, 0.55);
+  --color-border: rgba(255, 255, 255, 0.06);
+
+  /* === Oberflächenfarben === */
+  --color-surface-hover: rgba(0, 180, 255, 0.35);
+  --color-border-hover: rgba(255, 255, 255, 0.1);
+}
+
+/* === CALM === */
+[data-theme="calm"] {
+
+  /* === Farbarchitektur === */
+  --color-bg: #f9fbfa;               /* Helles, warmes Grau mit leichtem Grün-Touch */
+  --color-text: #1a1a1a;             /* Dunkelneutraler Text für Lesbarkeit */
+  --color-subtext: #5c5c5c;          /* Sanftes Grau */
+  --color-accent: #4dbb9c;           /* Beruhigendes, organisches Mintgrün */
+  --color-error: #ff6b6b;
+  --color-success: #33cc99;
+
+  /* === Farbarchitektur (Light Surfaces) === */
+  --color-light-text: #111111;
+  --color-light-subtext: #333333;
+  --color-light-accent: #4dbb9c;
+  --color-light-border: rgba(0, 0, 0, 0.05);
+
+  /* === Farbverläufe === */
+  --accent-gradient: linear-gradient(90deg, #5cd6b1 0%, #46bfa5 100%);
+  --accent-gradient-hover: linear-gradient(90deg, #6ee0be 0%, #56c6af 100%);
+
+  /* === Schatten === */
+  --soft-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  --soft-shadow-hover: 0 5px 14px rgba(0, 0, 0, 0.12);
+
+  /* === Oberflächenfarben === */
+  --color-surface: rgba(255, 255, 255, 0.9);
+  --color-border: rgba(0, 0, 0, 0.04);
+}
+
+/* === TECH === */
+[data-theme="tech"] {
+  
+  /* === Farbarchitektur === */
+  --color-bg: #0a0f14;               /* Tiefes, kühles Schwarzblau */
+  --color-text: #e8f1ff;             /* Helles, sauberes Blau-Weiß */
+  --color-subtext: #9bb1cc;          /* Sanftes Blaugrau */
+  --color-accent: #3ea6ff;           /* Starkes Markenblau */
+  --color-error: #ff4d4f;
+  --color-success: #4cd964;
+
+  /* === Farbarchitektur (Light Surfaces) === */
+  --color-light-text: #111111;
+  --color-light-subtext: #333333;
+  --color-light-accent: #0072ff;
+  --color-light-border: rgba(255, 255, 255, 0.06);
+
+  /* === Farbverläufe === */
+  --accent-gradient: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+  --accent-gradient-hover: linear-gradient(90deg, #00e6a8 0%, #00b4ff 100%);
+
+  /* === Schatten === */
+  --soft-shadow: 0 4px 14px rgba(0, 114, 255, 0.25);
+  --soft-shadow-hover: 0 6px 20px rgba(0, 114, 255, 0.35);
+
+  /* === Oberflächenfarben === */
+  --color-surface: rgba(15, 25, 35, 0.6);
+  --color-border: rgba(62, 166, 255, 0.1);
+}
