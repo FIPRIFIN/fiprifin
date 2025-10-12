@@ -1,0 +1,105 @@
+/* =======================================
+   🚀 COMING SOON SECTION (Mobile First)
+   Layout innerhalb BaseSection
+======================================= */
+
+/* === Mobile Default === */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+}
+
+/* --- Visual / Produktbild --- */
+.visual {
+  order: -1;
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: var(--space-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: var(--radius-large);
+  object-fit: contain;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.image:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+/* --- Content / Textbereich --- */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 520px;
+}
+
+.content strong {
+  color: var(--color-text);
+}
+
+/* --- CTA Buttons --- */
+.content .ctaGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  gap: 0.75rem;
+}
+
+/* === Desktop / Tablet ab 961px === */
+@media (min-width: 961px) {
+  .wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+
+  .visual {
+    order: 0;
+    flex: 0 1 50%;
+    margin-bottom: 0;
+    max-width: none;
+  }
+
+  .image {
+    width: 90%;
+    max-width: 560px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .content {
+    flex: 0 1 40%;
+    align-items: flex-start;
+  }
+
+  .content h2 {
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  }
+
+  .content p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+  }
+
+  .content .ctaGroup {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: none;
+    gap: var(--space-2);
+  }
+}

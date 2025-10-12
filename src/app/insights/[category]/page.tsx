@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import { getCategories, getPostsByCategory } from "@/lib/content";
 import { buildBreadcrumbJsonLd } from "@/lib/seo/breadcrumbs";
-import PostCard from "@/components/PostCard";
-import Breadcrumb from "@/components/Breadcrumbs";
+import PostCard from "@/components/ui/PostCard";
+import Breadcrumb from "@/components/ui/Breadcrumbs";
 import styles from "../insights.module.css";
 
 export const dynamic = "force-static";

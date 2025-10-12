@@ -1,0 +1,109 @@
+/* ===============================
+   💬 TEXT COMPONENT STYLES
+   Mobile First – Verosoma CD
+=============================== */
+
+/* === Base === */
+.text {
+  margin: 0;
+  line-height: 1.8;
+  text-wrap: pretty;
+  max-width: 70ch;
+  transition: color 0.25s ease;
+}
+
+/* =======================================
+   🎨 VARIANTS (Dark Theme Default)
+======================================= */
+.default {
+  color: var(--color-text);
+}
+
+.muted {
+  color: var(--color-subtext);
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.error {
+  color: var(--color-error);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+/* =======================================
+   ☀️ LIGHT TONE SUPPORT (z. B. im ArticleContainer)
+======================================= */
+.light-default {
+  color: var(--color-light-text);
+}
+
+.light-muted {
+  color: var(--color-light-subtext);
+}
+
+.light-accent {
+  color: var(--color-light-accent);
+}
+
+/* =======================================
+   🔠 FONT SIZES
+======================================= */
+.sm {
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+}
+
+.md {
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+}
+
+.lg {
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+}
+
+/* =======================================
+   🧭 TEXT ALIGNMENT
+======================================= */
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+/* =======================================
+   🔗 INLINE LINK STYLE (Integrated)
+======================================= */
+.text a,
+.text :global(.inlineLink) {
+  text-decoration: underline;
+  color: var(--color-accent);
+  text-underline-offset: 2px;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.text a:hover,
+.text :global(.inlineLink:hover) {
+  opacity: 0.85;
+  text-decoration-thickness: 2px;
+}
+
+/* === Light Variant for Links === */
+.text.light a,
+.text.light :global(.inlineLink) {
+  color: var(--color-light-accent);
+}
+
+.text.light a:hover,
+.text.light :global(.inlineLink:hover) {
+  opacity: 0.85;
+}

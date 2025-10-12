@@ -4,6 +4,7 @@ import { SiInstagram } from "react-icons/si";
 import styles from "./links.module.css";
 import Image from "next/image";
 import type { Metadata } from "next";
+import HiddenHeadline from "@/components/ui/atoms/typography/HiddenHeadline";
 
 export const metadata: Metadata = {
   title: "Verosoma Links – Offizielle Übersicht",
@@ -33,9 +34,10 @@ export default function LinksPage() {
 
   return (
     <section className={styles.linksStage} aria-labelledby="verosoma-links-heading">
-      <h1 className="visuallyHidden">
-        Verosoma Links – Zentrale Übersicht zu Insights, Projekten und offiziellen Inhalten
-      </h1>
+      <HiddenHeadline
+        text="Verosoma Links – Zentrale Übersicht zu Insights, Projekten und offiziellen Inhalten"
+        id="verosoma-links-heading"
+      />
       <Image
         src="/images/MasterTransCropped.svg"
         alt="Verosoma Logo - Offizielle Markenidentität"

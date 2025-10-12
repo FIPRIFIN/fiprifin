@@ -1,0 +1,75 @@
+/* ============================
+   🦸 HERO PRODUCT (Mobile First)
+   – Layout innerhalb BaseSection
+============================ */
+
+/* === Mobile Default === */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+}
+
+.coverVisual {
+  order: -1;
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: var(--space-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coverImage {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: var(--radius-large);
+  object-fit: contain;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.coverImage:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 520px;
+}
+
+/* === Responsive Anpassungen === */
+@media (min-width: 961px) {
+  .wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+
+  .coverVisual {
+    order: 0;
+    flex: 0 1 50%;
+    margin-bottom: 0;
+    max-width: none;
+  }
+
+  .coverImage {
+    width: 90%;
+    max-width: 560px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .content {
+    flex: 0 1 40%;
+    align-items: flex-start;
+  }
+}

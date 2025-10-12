@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
-import Container from "./Container";
+import Container from "@/components/layout/Container";
 import styles from "./Header.module.css";
 import Image from "next/image";
 

@@ -2,16 +2,12 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Container from "@/components/Container";
-import Button from "@/components/Button";
-import ButtonWrapper from "@/components/ButtonWrapper";
-import Counter from "@/components/Counter";
-import Image from "next/image";
+import Container from "@/components/layout/Container";
+import HeroProduct from "@/components/Sections/Hero/HeroProduct";
+import HiddenHeadline from "@/components/ui/atoms/typography/HiddenHeadline";
+import ComingSoonSection from "@/components/Sections/ComingSoon/ComingSoonSection";
 import styles from "./Home.module.css";
 
-/* ===========================
-   🏠 HOMEPAGE
-=========================== */
 export default function Home() {
   const pathname = usePathname();
 
@@ -26,85 +22,40 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Container>
-        {/* ===========================
-            HERO SECTION – Hauptprodukt
-        ============================ */}
-        <section
-          className={styles.hero}
-          aria-labelledby="verosoma-budget-heading"
-        >
-          <div className={styles.coverVisual}>
-            <Image
-              src="/images/produktcover/TestProduktBalancesvg.svg"
-              alt="Produktcover von Verosoma Budget – digitales Haushaltsbuch Tool für Familien"
-              className={styles.coverImage}
-              width={560}
-              height={560}
-              priority
-              unoptimized
-            />
-          </div>
-
           <div className={styles.heroContent}>
-            {/* SEO-freundlicher H1, visuell versteckt */}
-            <h1 id="verosoma-budget-heading" className="visuallyHidden">
-              Verosoma Budget – Das digitale Haushaltsbuch und Finanzplaner für Familien
-            </h1>
-
-            <Counter target={1284} duration={3} label="+ aktive Planner" />
-
-            <p className={styles.text}>
-              Struktur schafft Freiheit. Dein klarer Start in die Finanzordnung –{" "}
-              <br />
-              Schritt für Schritt. Das digitale Haushaltsbuch für junge Familien
-              und moderne Haushalte – gestaltet für Übersicht, Kontrolle und Ruhe.
-            </p>
-
-            <ButtonWrapper>
-              <Button href="/shop/verosoma-budget" variant="primary">
-                Jetzt kaufen
-              </Button>
-              <Button href="/verosoma-budget" variant="secondary">
-                Verstehen
-              </Button>
-            </ButtonWrapper>
-          </div>
-        </section>
-
-        {/* ===========================
-            COMING SOON SECTION – Folgeprodukt
-        ============================ */}
-        <section
-          className={styles.comingSoon}
-          aria-labelledby="verosoma-flow-heading"
-        >
-          <div className={styles.coverVisual}>
-            <Image
-              src="/images/produktcover/TestProduktFlowsvg.svg"
-              alt="Produktcover von Verosoma Flow – digitales Finanzcoaching Tool (Coming Soon)"
-              className={styles.coverImage}
-              width={460}
-              height={460}
-              unoptimized
+            <HiddenHeadline
+              text="Verosoma Budget – Das digitale Haushaltsbuch und Finanzplaner für Familien"
+              id="verosoma-budget-heading"
+            />
+            <HeroProduct
+              imageSrc="/images/produktcover/TestProduktBalancesvg.svg"
+              imageAlt="Produktcover von Verosoma Budget – digitales Haushaltsbuch Tool für Familien"
+              description="Struktur schafft Freiheit. Dein klarer Start in die Finanzordnung – Schritt für Schritt. Das digitale Haushaltsbuch für junge Familien und moderne Haushalte – gestaltet für Übersicht, Kontrolle und Ruhe."
+              counterTarget={1284}
+              ctaPrimary={{ label: "Jetzt kaufen", href: "/shop/verosoma-budget" }}
+              ctaSecondary={{ label: "Verstehen", href: "/verosoma-budget" }}
             />
           </div>
-
-          <div className={styles.comingSoonContent}>
-            <h2 id="verosoma-flow-heading">Verosoma Flow – Coming Soon</h2>
-            <p>
-              Nach dem Erfolg von <strong>Verosoma Budget</strong> folgt das
-              nächste Kapitel: <br />
-              <em>Flow</em> – dein smarter Begleiter für finanzielle Klarheit,
-              Gelassenheit und gesunde Routinen im Umgang mit Geld. Bald
-              verfügbar.
-            </p>
-            <ButtonWrapper>
-              <Button href="/newsletter" variant="primary">
-                Frühzugang sichern
-              </Button>
-            </ButtonWrapper>
-          </div>
-        </section>
+          <HiddenHeadline
+            as="h2"
+            text="Verosoma Flow – Coming Soon"
+            id="verosoma-flow-heading"
+          />
+          <ComingSoonSection
+            imageSrc="/images/produktcover/TestProduktFlowsvg.svg"
+            imageAlt="Produktcover von Verosoma Flow – digitales Finanzcoaching Tool (Coming Soon)"
+            title="Verosoma Flow – Coming Soon"
+            description={
+              <>
+                Nach dem Erfolg von <strong>Verosoma Budget</strong> folgt das
+                nächste Kapitel: <br />
+                <em>Flow</em> – dein smarter Begleiter für finanzielle Klarheit,
+                Gelassenheit und gesunde Routinen im Umgang mit Geld. Bald
+                verfügbar.
+              </>
+            }
+            cta={{ label: "Frühzugang sichern", href: "/newsletter" }}
+          />
       </Container>
     </main>
   );

@@ -1,4 +1,4 @@
-import Container from "@/components/Container";
+import Container from "@/components/layout/Container";
 import styles from "./dna.module.css";
 
 export default function DNA() {

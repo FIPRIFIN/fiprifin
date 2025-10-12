@@ -1,0 +1,93 @@
+/* ============================================
+   🔗 VEROSOMA LINK ATOM
+   Atomic Design: UI / Atoms / Typography
+   Mobile First – CD-konform
+============================================ */
+
+/* === Base (Mobile) === */
+.link {
+  display: inline;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* ============================================
+   🎨 VARIANTS (Dark Theme Default)
+============================================ */
+.default {
+  color: var(--color-text);
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.muted {
+  color: var(--color-subtext);
+}
+
+.underline {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ============================================
+   ☀️ LIGHT THEME SUPPORT (z. B. in ArticleContainer)
+============================================ */
+.light-default {
+  color: var(--color-light-text);
+}
+
+.light-accent {
+  color: var(--color-light-accent);
+}
+
+.light-muted {
+  color: var(--color-light-subtext);
+}
+
+.light-underline {
+  color: var(--color-light-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ============================================
+   🧭 INTERACTION STATES
+============================================ */
+.link:hover {
+  opacity: 0.85;
+  color: var(--color-accent);
+}
+
+.link:active {
+  opacity: 0.65;
+  transform: translateY(1px);
+}
+
+/* Light tone hover (separat für helle Flächen) */
+.link.light:hover {
+  color: var(--color-light-accent);
+}
+
+/* ============================================
+   ♿ ACCESSIBILITY FOCUS
+============================================ */
+.link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============================================
+   💻 RESPONSIVE
+============================================ */
+@media (min-width: 768px) {
+  .link {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,74 @@
+/* ============================================
+   🧩 VEROSOMA INLINE LINK
+   Atomic Design: UI / Atoms / Typography
+   Mobile First – dezente Integration im Fließtext
+============================================ */
+
+/* === Base (Mobile) === */
+.inlineLink {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  transition: color 0.25s ease, opacity 0.25s ease;
+  word-break: break-word;
+}
+
+/* ============================================
+   🎨 VARIANTS (Dark Theme Default)
+============================================ */
+.default {
+  color: var(--color-text);
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.muted {
+  color: var(--color-subtext);
+}
+
+/* ============================================
+   ☀️ LIGHT THEME SUPPORT
+============================================ */
+.light-default {
+  color: var(--color-light-text);
+}
+
+.light-accent {
+  color: var(--color-light-accent);
+}
+
+.light-muted {
+  color: var(--color-light-subtext);
+}
+
+/* ============================================
+   🧭 INTERACTION STATES
+============================================ */
+.inlineLink:hover {
+  opacity: 0.85;
+  text-decoration-thickness: 2px;
+}
+
+.inlineLink:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* === Light tone hover === */
+.inlineLink.light:hover {
+  color: var(--color-light-accent);
+  opacity: 0.85;
+}
+
+/* ============================================
+   💻 RESPONSIVE
+============================================ */
+@media (min-width: 768px) {
+  .inlineLink {
+    text-underline-offset: 3px;
+  }
+}

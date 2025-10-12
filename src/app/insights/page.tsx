@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getCategories, getPostsByCategory } from "@/lib/content";
-import Breadcrumb from "@/components/Breadcrumbs";
+import Breadcrumb from "@/components/ui/Breadcrumbs";
 import styles from "./insights.module.css";
 
 export const dynamic = "force-static";

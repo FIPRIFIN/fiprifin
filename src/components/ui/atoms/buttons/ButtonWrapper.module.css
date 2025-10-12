@@ -1,0 +1,63 @@
+/* ============================================
+   🧱 VEROSOMA BUTTON WRAPPER
+   Atomic Design: UI / Molecules / Buttons
+   Mobile First – CD-konform
+============================================ */
+
+/* === Base (Mobile) === */
+.wrapper {
+  display: flex;
+  flex-direction: column;      /* mobile: Buttons untereinander */
+  align-items: center;         /* mobile: zentriert */
+  flex-wrap: nowrap;           /* mobile: kein Wrap nötig */
+  gap: var(--space-1);         /* mobile: engerer Abstand */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   🧭 ALIGNMENTS
+   (wirken v.a. ab Desktop; auf Mobile durch column/center ohnehin zentriert)
+============================================ */
+.center {
+  justify-content: center;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+/* ============================================
+   📏 SPACING VARIANTS
+============================================ */
+.space-none {
+  margin-top: 0;
+}
+
+.space-sm {
+  margin-top: var(--space-1);
+}
+
+.space-md {
+  margin-top: var(--space-2);
+}
+
+.space-lg {
+  margin-top: var(--space-3);
+}
+
+/* ============================================
+   🖥️ Desktop/Tablet-Up
+============================================ */
+@media (min-width: 769px) {
+  .wrapper {
+    flex-direction: row;       /* desktop: Buttons nebeneinander */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);       /* desktop: größerer Abstand */
+  }
+}

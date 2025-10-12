@@ -1,30 +1,38 @@
-/* ===========================
-   BASE BUTTON STYLE
-=========================== */
+/* ============================================
+   ⚡ VEROSOMA BUTTON – CORE STYLES
+   Atomic Design: UI / Atoms / Buttons
+   Mobile First – CD-konform
+============================================ */
+
+/* === Base Button === */
 .button {
   display: inline-block;
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  text-align: center;
+  text-decoration: none;
+
   padding: 0.9rem 1.8rem;
   border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
-  letter-spacing: 0.3px;
-  font-size: 1rem;
+  border: 1px solid transparent;
+
   position: relative;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
+
   backdrop-filter: blur(12px) saturate(1.2);
   -webkit-backdrop-filter: blur(12px) saturate(1.2);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* ===========================
-   PRIMARY BUTTON
-   – gradient accent with light logic
-=========================== */
+/* ============================================
+   🎨 VARIANTS
+============================================ */
+
+/* --- Primary (Gradient CTA) --- */
 .primary {
   background: linear-gradient(90deg, #00C6FF 0%, #0072FF 100%);
   color: #fff;
@@ -49,10 +57,7 @@
   box-shadow: 0 3px 10px rgba(0, 114, 255, 0.2);
 }
 
-/* ===========================
-   SECONDARY BUTTON
-   – calm glass outline button
-=========================== */
+/* --- Secondary (Glass Outline) --- */
 .secondary {
   background: rgba(20, 20, 20, 0.45);
   color: var(--color-text);
@@ -75,34 +80,80 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* ===========================
-   GLOW BORDER (Subtle)
-=========================== */
+/* --- Ghost (Minimal Accent) --- */
+.ghost {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid rgba(62, 166, 255, 0.3);
+}
+
+.ghost:hover {
+  background: rgba(62, 166, 255, 0.08);
+}
+
+/* ============================================
+   🌈 EFFECTS & STATES
+============================================ */
+
+/* --- Glow Border --- */
 .button::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(90deg, rgba(0,180,255,0.35), rgba(0,180,255,0.1));
+  background: linear-gradient(
+    90deg,
+    rgba(0, 180, 255, 0.35),
+    rgba(0, 180, 255, 0.1)
+  );
   opacity: 0;
   transition: opacity 0.35s ease;
 }
+
 .button:hover::before {
   opacity: 0.2;
 }
 
-/* ===========================
-   GRADIENT MOTION
-=========================== */
+/* --- Disabled State --- */
+.disabled,
+.button[disabled],
+.button[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(0.3);
+}
+
+/* ============================================
+   🔠 SIZES
+============================================ */
+.sm {
+  font-size: 0.85rem;
+  padding: 0.6rem 1.2rem;
+}
+
+.md {
+  font-size: 1rem;
+  padding: 0.9rem 1.8rem;
+}
+
+.lg {
+  font-size: 1.15rem;
+  padding: 1.2rem 2.2rem;
+}
+
+/* ============================================
+   🌀 ANIMATIONS
+============================================ */
 @keyframes gradientIdle {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+/* ============================================
+   📱 RESPONSIVE
+============================================ */
 @media (max-width: 768px) {
   .button {
     width: 100%;

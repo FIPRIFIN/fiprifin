@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getAllParams, getPost, getPostsByCategory } from "@/lib/content";
 import { buildBreadcrumbJsonLd } from "@/lib/seo/breadcrumbs";
-import Breadcrumb from "@/components/Breadcrumbs";
+import Breadcrumb from "@/components/ui/Breadcrumbs";
 import AffiliateBox from "@/components/AffiliateBox";
 import Link from "next/link";
 import NextImage from "next/image";
