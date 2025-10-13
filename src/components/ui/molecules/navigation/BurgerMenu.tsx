@@ -1,39 +1,41 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import styles from "./BurgerMenu.module.css";
+import { PORTAL_ROOT_ID } from "@/app/layout"; // ⬅️ zentral importiert
 
 interface BurgerMenuProps {
-  /**
-   * 📜 Navigationslinks (typischerweise LinkWrapper + Link-Atoms)
-   */
   children: React.ReactNode;
 }
 
 /**
- * 🍔 BurgerMenu – Mobile Navigation für Verosoma
- * ----------------------------------------------
- * Minimalistisches, Apple-inspiriertes Overlay-Menü.
- * Mobile-first, fix dunkel, nutzt `--header-fg` für helle Elemente.
- * Vollständig semantisch & ARIA-konform.
- *
- * 📘 Verwendung:
- * ```tsx
- * <BurgerMenu>
- *   <LinkWrapper direction="vertical" align="center" gap="space-3">
- *     <Link href="/about">Über uns</Link>
- *     <Link href="/shop">Shop</Link>
- *     <Link href="/contact">Kontakt</Link>
- *   </LinkWrapper>
- * </BurgerMenu>
- * ```
+ * 🍔 BurgerMenu – Mobile Navigation (Portal-Version)
+ * --------------------------------------------------
+ * Apple-inspiriertes Overlay, gerendert im globalen Portal-Root.
+ * Skalierbar, SSR-safe, iOS-kompatibel.
  */
 export default function BurgerMenu({ children }: BurgerMenuProps) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  const menu = (
+    <div
+      className={`${styles.overlay} ${open ? styles.open : ""}`}
+      role="dialog"
+      aria-modal="true"
+    >
+      <nav className={styles.nav} role="navigation">
+        {children}
+      </nav>
+    </div>
+  );
 
   return (
     <div className={styles.container}>
-      {/* === Toggle Button === */}
+      {/* Toggle Button */}
       <button
         className={`${styles.burger} ${open ? styles.active : ""}`}
         aria-label="Menü öffnen oder schließen"
@@ -45,16 +47,9 @@ export default function BurgerMenu({ children }: BurgerMenuProps) {
         <span />
       </button>
 
-      {/* === Overlay Navigation === */}
-      <div
-        className={`${styles.overlay} ${open ? styles.open : ""}`}
-        role="dialog"
-        aria-modal="true"
-      >
-        <nav className={styles.nav} role="navigation">
-          {children}
-        </nav>
-      </div>
+      {/* Overlay via globales Portal */}
+      {mounted &&
+        createPortal(menu, document.getElementById(PORTAL_ROOT_ID)!)}
     </div>
   );
 }
