@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import styles from "./BurgerMenu.module.css";
-import { PORTAL_ROOT_ID } from "@/app/layout"; // ⬅️ zentral importiert
+import { PORTAL_ROOT_ID } from "@/app/utils/portal"; // ⬅️ zentral importiert
 
 interface BurgerMenuProps {
   children: React.ReactNode;
