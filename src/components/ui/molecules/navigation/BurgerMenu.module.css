@@ -106,6 +106,18 @@
 }
 
 /* ============================================
+   🩶 iOS Fix: Textfarbe bleibt klar weiß
+============================================ */
+@supports (-webkit-backdrop-filter: none) {
+  .overlay,
+  .nav,
+  .nav * {
+    color: var(--header-fg);
+    -webkit-text-fill-color: var(--header-fg); /* 🧠 iOS Safari Fix */
+  }
+}
+
+/* ============================================
    💻 Desktop: Burger ausgeblendet
 ============================================ */
 @media (min-width: 768px) {
