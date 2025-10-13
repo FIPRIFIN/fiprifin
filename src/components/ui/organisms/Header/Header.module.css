@@ -1,0 +1,48 @@
+/* ============================================
+   🧩 HEADER ORGANISM – Verosoma CD V1 (Mobile First)
+   Fix dark, modular & responsive
+============================================ */
+
+/* === Layout Alignment === */
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* === Desktop Navigation === */
+.navDesktop {
+  display: none;
+}
+
+/* === Mobile Navigation === */
+.navMobile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* === Farbanpassung für Links im Header-Kontext === */
+.navDesktop :global(a),
+.navMobile :global(a) {
+  color: var(--header-fg);
+}
+
+.navDesktop :global(a:hover),
+.navMobile :global(a:hover) {
+  color: var(--color-accent);
+  opacity: 0.9;
+}
+
+
+/* === Desktop Switch ab 768px === */
+@media (min-width: 768px) {
+  .navDesktop {
+    display: flex;
+    margin-right: var(--space-4)
+  }
+
+  .navMobile {
+    display: none;
+  }
+}

@@ -2,7 +2,7 @@ import "./../styles/globals.css";
 import '../styles/layout.css';
 import '../styles/typography.css';
 import type { Metadata } from "next";
-import Header from '@/components/layout/Header';
+import Header from '@/components/ui/organisms/Header/Header';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {

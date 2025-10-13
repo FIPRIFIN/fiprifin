@@ -3,6 +3,26 @@
 =========================== */
 
 :root {
+
+  /* ===========================
+  🎨 Farbpalette & Design Tokens
+  =========================== */
+  /* Fixe Schriftfarbe auf dunklem Header */
+
+    /* === HEADER DESIGN TOKENS === */
+  --header-height-mobile: 56px;
+  --header-height-desktop: 64px;
+  --header-bg: rgba(13, 13, 13, 0.95);
+  --header-bg-scrolled: rgba(13, 13, 13, 0.98);
+  --header-fg: #ffffff;
+  --header-border: rgba(255, 255, 255, 0.08);
+  --header-border-scrolled: rgba(255, 255, 255, 0.06);
+  --header-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --header-shadow-scrolled: 0 3px 10px rgba(0, 0, 0, 0.25);
+  --header-blur: 12px;
+
+
+
  
 
   /* === Spacing & Radien === */
@@ -120,13 +140,6 @@ main,
   --color-surface: rgba(255, 255, 255, 0.85);
   --color-border: rgba(0, 0, 0, 0.06);
 
-    /* === Glass System === */
-  --glass-bg: rgba(256, 256, 256, 0.98);
-  --glass-blur: 22px;
-  --glass-saturation: 1.35;
-  --glass-brightness: 1.05;
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --glass-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* === DARK === */
@@ -157,15 +170,6 @@ main,
   /* === Oberflächenfarben === */
   --color-surface: rgba(20, 20, 20, 0.55);
   --color-border: rgba(255, 255, 255, 0.06);
-
-   /* === Glass System === */
- 
-  --glass-bg: rgba(15, 15, 15, 0.93);     /* dichterer Grundton */
-  --glass-blur: 23px;                     /* deutlich mehr Blur → weicher Lichtstreuungseffekt */
-  --glass-saturation: 1.2;                /* etwas weniger Farbe, natürlicher Look */
-  --glass-brightness: 0.9;               /* leicht aufgehellt für Tiefe */
-  --glass-border: rgba(255, 255, 255, 0.05);
-  --glass-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
 
 
   /* === Oberflächenfarben === */

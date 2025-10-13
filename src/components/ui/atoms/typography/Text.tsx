@@ -1,6 +1,5 @@
 import * as React from "react";
 import styles from "./Text.module.css";
-import InlineLink from "@/components/ui/atoms/typography/InlineLink";
 
 interface TextProps {
   /**

@@ -1,0 +1,56 @@
+/* ============================
+   🧩 BASE HEADER – Verosoma CD V1 (Mobile First)
+   Vollmodular – gesteuert über globale Header-Variablen
+============================ */
+
+.base {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height-mobile);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 3000;
+
+  background: var(--header-bg);
+  color: var(--header-fg);
+  border-bottom: 1px solid var(--header-border);
+  box-shadow: var(--header-shadow);
+
+  backdrop-filter: blur(var(--header-blur)) saturate(1.2);
+  -webkit-backdrop-filter: blur(var(--header-blur)) saturate(1.2);
+
+  padding: 0 var(--space-2);
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+/* Desktop-Anpassungen */
+@media (min-width: 768px) {
+  .base {
+    height: var(--header-height-desktop);
+    padding: 0 var(--space-3);
+  }
+
+  .inner {
+    gap: var(--space-3);
+  }
+}
+
+/* Optionaler Scroll-State */
+.base.scrolled {
+  background: var(--header-bg-scrolled);
+  border-bottom-color: var(--header-border-scrolled);
+  box-shadow: var(--header-shadow-scrolled);
+}

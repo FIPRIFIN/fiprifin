@@ -37,22 +37,15 @@
   align-items: center;
   box-sizing: border-box;
   width: 100%;
+  margin-top: var(--header-height-mobile); 
 }
 
 /* Ab Tablet – wenn dein Content breiter wird */
 @media (min-width: 768px) {
   .content {
     align-items: center; /* bleibt gleich, aber sauber definiert */
+    margin-top: var(--header-height-desktop);
   }
-}
-
-/* === Optionaler Übergang Header → Content === */
-.header-shadow {
-  position: relative;
-  height: 1px;
-  background: var(--soft-shadow);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-  z-index: 5;
 }
 
 /* === Fix: Sticky Header reserviert seinen Platz === */

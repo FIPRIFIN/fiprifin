@@ -1,0 +1,60 @@
+/* ============================================
+   🪶 VEROSOMA LOGO ATOM
+   Atomic Design: UI / Atoms / Brand
+   Mobile First – CD-konform
+============================================ */
+
+/* === Base Style === */
+.logo {
+  display: inline-block;
+  font-weight: 800;
+  margin-left: var(--space-3);
+  letter-spacing: 0.5px;
+  color: var(--color-accent);
+  transition: color 0.3s ease, transform 0.25s ease;
+  user-select: none;
+}
+
+/* === Größenvarianten === */
+.sm {
+  font-size: 1.5rem;
+}
+
+.md {
+  font-size: 2rem;
+}
+
+.lg {
+  font-size: 3rem;
+}
+
+/* === Hover & Interaction === */
+.logo:hover {
+  transform: scale(1.05);
+  color: var(--color-accent);
+}
+
+/* === Optionaler Link-Wrapper === */
+.linkWrapper {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   📱 Responsive
+============================================ */
+@media (min-width: 768px) {
+  .md {
+    font-size: 2.4rem;
+  }
+
+  .lg {
+    font-size: 3.6rem;
+  }
+
+  .logo {
+    margin-left: var(--space-4);
+  }
+}

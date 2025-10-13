@@ -1,0 +1,24 @@
+.scrollProgress {
+  position: fixed;
+  top: var(--header-height-mobile);
+  left: 0;
+  right: 0;
+  height: 3px;
+
+  background: var(--accent-gradient);
+  transform-origin: left;
+  pointer-events: none;
+  will-change: transform;
+
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 8px rgba(0, 114, 255, 0.35);
+  z-index: 2500;
+
+  transition: opacity 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .scrollProgress {
+    top: var(--header-height-desktop);
+  }
+}
