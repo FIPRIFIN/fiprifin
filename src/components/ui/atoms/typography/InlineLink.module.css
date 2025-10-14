@@ -6,16 +6,18 @@
 
 /* === Base (Mobile) === */
 .inlineLink {
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   text-decoration: underline;
   text-underline-offset: 2px;
   cursor: pointer;
-  transition: color 0.25s ease, opacity 0.25s ease;
+  transition: 
+    color var(--motion-base) var(--ease-soft), 
+    var(--transition-opacity);
   word-break: break-word;
 }
 
 .inlineLink:hover {
-  opacity: 0.85;
+  opacity: var(--opacity-hover);
   text-decoration-thickness: 2px;
 }
 
@@ -53,20 +55,20 @@
    🧭 INTERACTION STATES
 ============================================ */
 .inlineLink:hover {
-  opacity: 0.85;
+  opacity: var(--opacity-hover);
   text-decoration-thickness: 2px;
 }
 
 .inlineLink:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: var(--radius-small);
 }
 
 /* === Light tone hover === */
 .inlineLink.light:hover {
   color: var(--color-light-accent);
-  opacity: 0.85;
+  opacity: var(--opacity-hover);
 }
 
 /* ============================================

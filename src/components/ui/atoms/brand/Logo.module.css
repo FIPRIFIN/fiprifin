@@ -7,11 +7,13 @@
 /* === Base Style === */
 .logo {
   display: inline-block;
-  font-weight: 800;
+  font-weight: var(--font-weight-extrabold);
   margin-left: var(--space-3);
-  letter-spacing: 0.5px;
+  letter-spacing: var(--tracking-wide);
   color: var(--color-accent);
-  transition: color 0.3s ease, transform 0.25s ease;
+  transition: 
+    color var(--motion-base) var(--ease-soft), 
+    transform var(--motion-base) var(--ease-soft);
   user-select: none;
 }
 

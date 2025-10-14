@@ -9,7 +9,7 @@
   line-height: 1.8;
   text-wrap: pretty;
   max-width: 70ch;
-  transition: color 0.25s ease;
+  transition: color var(--motion-base) var(--ease-soft);
 }
 
 .text + .text {
@@ -92,12 +92,14 @@
   text-decoration: underline;
   color: var(--color-accent);
   text-underline-offset: 2px;
-  transition: color 0.25s ease, opacity 0.25s ease;
+  transition: 
+    color var(--motion-base) var(--ease-soft), 
+    var(--transition-opacity);
 }
 
 .text a:hover,
 .text :global(.inlineLink:hover) {
-  opacity: 0.85;
+  opacity: var(--opacity-hover);
   text-decoration-thickness: 2px;
 }
 
@@ -109,5 +111,5 @@
 
 .text.light a:hover,
 .text.light :global(.inlineLink:hover) {
-  opacity: 0.85;
+  opacity: var(--opacity-hover);
 }

@@ -4,7 +4,7 @@ import React from "react";
 import BaseHeader from "@/components/layout/BaseHeader";
 import Logo from "@/components/ui/atoms/brand/Logo";
 import LinkWrapper from "@/components/ui/molecules/layout/LinkWrapper";
-import Link from "@/components/ui/atoms/typography/Link";
+import LinkHeader from "@/components/ui/atoms/typography/LinkHeader";
 import BurgerMenu from "@/components/ui/molecules/navigation/BurgerMenu";
 import styles from "./Header.module.css";
 
@@ -29,9 +29,9 @@ export default function Header() {
       {/* === Desktop Navigation === */}
       <div className={styles.navDesktop}>
         <LinkWrapper direction="horizontal" align="right" gap="space-2">
-          <Link href="/about">Über uns</Link>
-          <Link href="/shop">Shop</Link>
-          <Link href="/contact">Kontakt</Link>
+          <LinkHeader href="/about">Über uns</LinkHeader>
+          <LinkHeader href="/shop">Shop</LinkHeader>
+          <LinkHeader href="/contact">Kontakt</LinkHeader>
         </LinkWrapper>
       </div>
 
@@ -39,9 +39,9 @@ export default function Header() {
       <div className={styles.navMobile}>
         <BurgerMenu>
           <LinkWrapper direction="vertical" align="center" gap="space-3">
-            <Link href="/about">Über uns</Link>
-            <Link href="/shop">Shop</Link>
-            <Link href="/contact">Kontakt</Link>
+            <LinkHeader href="/about">Über uns</LinkHeader>
+            <LinkHeader href="/shop">Shop</LinkHeader>
+            <LinkHeader href="/contact">Kontakt</LinkHeader>
           </LinkWrapper>
         </BurgerMenu>
       </div>

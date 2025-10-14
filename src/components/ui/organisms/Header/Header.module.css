@@ -22,18 +22,6 @@
   justify-content: flex-end;
 }
 
-/* === Farbanpassung für Links im Header-Kontext === */
-.navDesktop :global(a),
-.navMobile :global(a) {
-  color: var(--header-fg);
-}
-
-.navDesktop :global(a:hover),
-.navMobile :global(a:hover) {
-  color: var(--color-accent);
-  opacity: 0.9;
-}
-
 
 /* === Desktop Switch ab 768px === */
 @media (min-width: 768px) {

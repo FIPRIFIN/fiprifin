@@ -1,0 +1,62 @@
+/* ============================================
+   🔗 VEROSOMA LINKHEADER ATOM
+   Atomic Design: UI / Atoms / Navigation
+   Fix basiert auf --header-fg
+   ============================================ */
+
+/* === Base === */
+.linkHeader {
+  display: inline-block;
+  font-weight: var(--font-weight-medium);
+  color: var(--header-fg);
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: var(--tracking-wide);
+  transition:
+    color var(--motion-base) var(--ease-soft),
+    opacity var(--motion-fast) var(--ease-soft),
+    transform var(--motion-fast) var(--ease-soft);
+}
+
+/* === Hover === */
+.linkHeader:hover {
+  color: var(--color-accent);
+  opacity: var(--opacity-hover);
+  transform: translateY(-1px);
+}
+
+/* === Active === */
+.linkHeader:active {
+  opacity: var(--opacity-active);
+  transform: translateY(0);
+}
+
+/* === Focus === */
+.linkHeader:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-small);
+}
+
+/* === Optional: Unterstreichung im Hover (Eleganter Effekt) === */
+.linkHeader::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.3s var(--ease-soft);
+  border-radius: var(--radius-small);
+  margin-top: 2px;
+}
+
+.linkHeader:hover::after {
+  width: 100%;
+}
+
+/* === Responsive: leicht größer auf Desktop === */
+@media (min-width: 768px) {
+  .linkHeader {
+    font-size: var(--font-size-body);
+  }
+}

@@ -1,9 +1,7 @@
 /* ============================================
-   🍔 VEROSOMA BURGER MENU
-   Atomic Design: Molecules / Navigation
-   Mobile First – CD-konform
-   Fix dark – Apple-inspirierte Navigation
-============================================ */
+   🍔 VEROSOMA BURGER MENU – FINAL FIXED
+   Mobile First – iOS Safe – Theme Aware
+   ============================================ */
 
 /* === Container === */
 .container {
@@ -11,10 +9,10 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  z-index: 2000;
+  z-index: var(--z-index-overlay);
 }
 
-/* === Toggle Button === */
+/* === Toggle Button (Burger / Close) === */
 .burger {
   position: relative;
   width: 32px;
@@ -26,8 +24,8 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 2001;
-  transition: transform 0.25s ease;
+  z-index: var(--z-index-popover);
+  transition: var(--transition-transform);
   margin-right: var(--space-3);
 }
 
@@ -35,25 +33,23 @@
   display: block;
   width: 100%;
   height: 3px;
-  background-color: var(--header-fg); /* Fix hell */
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  background-color: var(--header-fg);
+  border-radius: var(--radius-small);
+  transition: all var(--motion-base) var(--ease-soft);
 }
 
 /* Hover Feedback */
 .burger:hover span {
-  opacity: 0.8;
+  opacity: var(--opacity-hover);
 }
 
 /* === Active State (X) === */
 .burger.active span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
-
 .burger.active span:nth-child(2) {
-  opacity: 0;
+  opacity: var(--opacity-0);
 }
-
 .burger.active span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
@@ -70,14 +66,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
+  opacity: var(--opacity-0);
   pointer-events: none;
-  transition: opacity 0.35s ease;
-  z-index: 2000;
+  transition: var(--transition-opacity);
+  z-index: var(--z-index-overlay);
 }
 
+/* Offen-Zustand */
 .overlay.open {
-  opacity: 1;
+  opacity: var(--opacity-100);
   pointer-events: all;
 }
 
@@ -93,17 +90,61 @@
   animation: fadeInLinks 0.4s ease forwards;
 }
 
-/* Sanftes Einblenden der Links */
+/* === Fade-In Animation für Links === */
 @keyframes fadeInLinks {
   from {
-    opacity: 0;
+    opacity: var(--opacity-0);
     transform: translateY(10px);
   }
   to {
-    opacity: 1;
+    opacity: var(--opacity-100);
     transform: translateY(0);
   }
 }
+
+/* ============================================
+   ❌ Close Button (X) – Eigenständige Darstellung
+============================================ */
+.burger.close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: calc(var(--z-index-overlay) + 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Die zwei Linien für das X */
+.burger.close span {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--header-fg);
+  border-radius: var(--radius-small);
+  transition: all var(--motion-base) var(--ease-soft);
+}
+
+.burger.close span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.burger.close span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+/* Das dritte Span ausblenden */
+.burger.close span:nth-child(3) {
+  display: none;
+}
+
 
 /* ============================================
    🩶 iOS Fix: Textfarbe bleibt klar weiß
@@ -113,7 +154,7 @@
   .nav,
   .nav * {
     color: var(--header-fg);
-    -webkit-text-fill-color: var(--header-fg); /* 🧠 iOS Safari Fix */
+    -webkit-text-fill-color: var(--header-fg);
   }
 }
 

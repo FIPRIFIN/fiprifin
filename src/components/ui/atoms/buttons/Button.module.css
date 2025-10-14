@@ -1,101 +1,103 @@
-/* ============================================
-   ⚡ VEROSOMA BUTTON – CORE STYLES
+/* =========================================================
+   ⚡ VEROSOMA BUTTON – CORE STYLES (v2)
    Atomic Design: UI / Atoms / Buttons
-   Mobile First – CD-konform
-============================================ */
+   Fully Tokenized – Theme Aware – Enterprise Grade
+   ========================================================= */
 
-/* === Base Button === */
+/* === 🧱 Base Button === */
 .button {
   display: inline-block;
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.3px;
+  font-family: var(--button-font-family);
+  font-weight: var(--button-font-weight);
+  font-size: var(--font-size-body);
+  letter-spacing: var(--button-letter-spacing);
   text-align: center;
   text-decoration: none;
 
-  padding: 0.9rem 1.8rem;
-  border-radius: 8px;
-  border: 1px solid transparent;
+  padding: var(--button-padding-y-md) var(--button-padding-x-md);
+  border-radius: var(--button-radius);
+  border: var(--button-border-width) solid var(--button-border-color);
 
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s ease;
 
-  backdrop-filter: blur(12px) saturate(1.2);
-  -webkit-backdrop-filter: blur(12px) saturate(1.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
+  color: var(--button-text-primary);
+  background: var(--button-bg-primary);
+  box-shadow: var(--button-shadow);
 
-/* ============================================
-   🎨 VARIANTS
-============================================ */
+  transition: var(--button-transition);
+  transform: translateY(0);
 
-/* --- Primary (Gradient CTA) --- */
-.primary {
-  background: var(--accent-gradient);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-  box-shadow:
-    0 4px 14px rgba(0, 114, 255, 0.25),
-    inset 0 0 6px rgba(255, 255, 255, 0.06);
-  background-size: 200% 200%;
+  backdrop-filter: blur(var(--button-blur)) saturate(var(--button-backdrop-saturation));
+  -webkit-backdrop-filter: blur(var(--button-blur)) saturate(var(--button-backdrop-saturation));
+
   animation: gradientIdle 6s ease infinite;
 }
 
+/* =========================================================
+   🎨 VARIANTS
+   ========================================================= */
+
+/* --- 🌈 PRIMARY BUTTON (Gradient CTA) --- */
+.primary {
+  background: var(--button-bg-primary);
+  color: var(--button-text-primary);
+  border-color: var(--button-border-color);
+  box-shadow: var(--button-shadow-accent);
+  background-size: 200% 200%;
+}
+
 .primary:hover {
-  background: var(--accent-gradient-hover);
-  box-shadow:
-    0 6px 20px var(--color-surface-hover),
-    inset 0 0 8px var(--color-border-hover);
-  transform: translateY(-2px);
+  background: var(--button-bg-primary-hover);
+  box-shadow: var(--button-shadow-accent-hover);
+  transform: var(--button-transform-hover);
 }
 
 .primary:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 10px rgba(0, 114, 255, 0.2);
+  transform: var(--button-transform-active);
+  box-shadow: var(--button-shadow-active);
 }
 
-/* --- Secondary (Glass Outline) --- */
+/* --- 🧊 SECONDARY BUTTON (Glass Outline) --- */
 .secondary {
-  background: var(--color-surface);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-  box-shadow:
-    0 4px 14px rgba(0, 0, 0, 0.35),
-    inset 0 0 6px rgba(255, 255, 255, 0.05);
+  background: var(--button-bg-secondary);
+  color: var(--button-text-secondary);
+  border-color: var(--button-border-color);
+  box-shadow: var(--button-shadow);
 }
 
 .secondary:hover {
-  border-color: rgba(62, 166, 255, 0.3);
+  background: var(--button-bg-secondary-hover);
+  border-color: var(--button-border-color-hover);
   color: var(--color-accent);
-  background: rgba(25, 25, 25, 0.55);
-  box-shadow: 0 6px 20px rgba(62, 166, 255, 0.15);
-  transform: translateY(-1px);
+  box-shadow: var(--button-shadow-hover);
+  transform: var(--button-transform-hover);
 }
 
 .secondary:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  transform: var(--button-transform-active);
+  box-shadow: var(--button-shadow-active);
 }
 
-/* --- Ghost (Minimal Accent) --- */
+/* --- 🪶 GHOST BUTTON (Minimal Accent) --- */
 .ghost {
-  background: transparent;
-  color: var(--color-accent);
-  border: 1px solid rgba(62, 166, 255, 0.3);
+  background: var(--button-bg-ghost);
+  color: var(--button-text-ghost);
+  border-color: var(--button-border-color-hover);
+  box-shadow: none;
 }
 
 .ghost:hover {
-  background: rgba(62, 166, 255, 0.08);
+  background: rgba(var(--color-accent-rgb, 62, 166, 255), var(--opacity-surface));
+  color: var(--color-accent);
 }
 
-/* ============================================
+/* =========================================================
    🌈 EFFECTS & STATES
-============================================ */
+   ========================================================= */
 
-/* --- Glow Border --- */
+/* --- Glow Border Animation --- */
 .button::before {
   content: "";
   position: absolute;
@@ -107,57 +109,61 @@
     rgba(0, 180, 255, 0.1)
   );
   opacity: 0;
-  transition: opacity 0.35s ease;
+  transition: opacity var(--motion-base) var(--ease-soft);
 }
 
 .button:hover::before {
-  opacity: 0.2;
+  opacity: var(--opacity-20);
 }
 
 /* --- Disabled State --- */
 .disabled,
 .button[disabled],
 .button[aria-disabled="true"] {
-  opacity: 0.5;
+  opacity: var(--button-opacity-disabled);
   cursor: not-allowed;
   pointer-events: none;
   filter: grayscale(0.3);
+  background: var(--button-bg-disabled);
+  color: var(--button-text-disabled);
+  box-shadow: none;
+  border-color: var(--button-border-color);
 }
 
-/* ============================================
+/* =========================================================
    🔠 SIZES
-============================================ */
+   ========================================================= */
 .sm {
-  font-size: 0.85rem;
-  padding: 0.6rem 1.2rem;
+  font-size: var(--font-size-body-sm);
+  padding: var(--button-padding-y-sm) var(--button-padding-x-sm);
 }
 
 .md {
-  font-size: 1rem;
-  padding: 0.9rem 1.8rem;
+  font-size: var(--font-size-body);
+  padding: var(--button-padding-y-md) var(--button-padding-x-md);
 }
 
 .lg {
-  font-size: 1.15rem;
-  padding: 1.2rem 2.2rem;
+  font-size: var(--font-size-body-lg);
+  padding: var(--button-padding-y-lg) var(--button-padding-x-lg);
 }
 
-/* ============================================
+/* =========================================================
    🌀 ANIMATIONS
-============================================ */
+   ========================================================= */
 @keyframes gradientIdle {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* ============================================
+/* =========================================================
    📱 RESPONSIVE
-============================================ */
+   ========================================================= */
 @media (max-width: 768px) {
   .button {
     width: 100%;
+    font-size: var(--font-size-body-sm);
     padding: 1rem 0;
-    font-size: 0.95rem;
   }
 }

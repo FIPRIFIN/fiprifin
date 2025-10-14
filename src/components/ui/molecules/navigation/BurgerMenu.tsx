@@ -33,23 +33,41 @@ export default function BurgerMenu({ children }: BurgerMenuProps) {
     </div>
   );
 
-  return (
-    <div className={styles.container}>
-      {/* Toggle Button */}
-      <button
-        className={`${styles.burger} ${open ? styles.active : ""}`}
-        aria-label="Menü öffnen oder schließen"
-        aria-expanded={open}
-        onClick={() => setOpen(!open)}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
+ return (
+  <>
+    <button
+      className={`${styles.burger} ${open ? styles.active : ""}`}
+      aria-label="Menü öffnen oder schließen"
+      aria-expanded={open}
+      onClick={() => setOpen(!open)}
+    >
+      <span />
+      <span />
+      <span />
+    </button>
 
-      {/* Overlay via globales Portal */}
-      {mounted &&
-        createPortal(menu, document.getElementById(PORTAL_ROOT_ID)!)}
-    </div>
-  );
+    {mounted &&
+      createPortal(
+        <div
+          className={`${styles.overlay} ${open ? styles.open : ""}`}
+          role="dialog"
+          aria-modal="true"
+        >
+          <nav className={styles.nav}>{children}</nav>
+
+          {/* 👇 Close Button INS Overlay, iOS-fest */}
+          <button
+            className={`${styles.burger} ${styles.close}`}
+            onClick={() => setOpen(false)}
+            aria-label="Menü schließen"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>,
+        document.getElementById(PORTAL_ROOT_ID)!
+      )}
+  </>
+);
 }

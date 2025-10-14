@@ -13,18 +13,21 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  z-index: 3000;
+  z-index: var(--z-index-header);
 
   background: var(--header-bg);
   color: var(--header-fg);
-  border-bottom: 1px solid var(--header-border);
+  border-bottom: var(--border-width-thin) solid var(--header-border);
   box-shadow: var(--header-shadow);
 
   backdrop-filter: blur(var(--header-blur)) saturate(1.2);
   -webkit-backdrop-filter: blur(var(--header-blur)) saturate(1.2);
 
   padding: 0 var(--space-2);
-  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  transition: 
+    background var(--motion-base) var(--ease-soft),
+    border-color var(--motion-base) var(--ease-soft),
+    box-shadow var(--motion-base) var(--ease-soft);
 }
 
 .inner {
