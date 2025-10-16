@@ -2,10 +2,10 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Container from "@/components/layout/Container";
-import HeroProduct from "@/components/Sections/Hero/HeroProduct";
+import Container from "@/components/ui/molecules/layout/Container";
+import HeroProduct from "@/components/ui/organisms/marketing/Hero/HeroProduct";
 import HiddenHeadline from "@/components/ui/atoms/typography/HiddenHeadline";
-import ComingSoonSection from "@/components/Sections/ComingSoon/ComingSoonSection";
+import ComingSoonSection from "@/components/ui/organisms/marketing/ComingSoon/ComingSoonSection";
 import styles from "./Home.module.css";
 
 export default function Home() {

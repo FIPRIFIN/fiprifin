@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Counter from "@/components/ui/Counter";
+import Counter from "@/components/ui/atoms/visuals/Counter";
 import { Button, ButtonWrapper} from "@/components/ui/atoms/buttons";
-import BaseSection from "@/components/layout/BaseSection";
+import BaseSection from "@/components/ui/molecules/layout/BaseSection";
 import styles from "./HeroProduct.module.css";
 import { Text } from "@/components/ui/atoms/typography";
-import { useMediaQuery } from "@/app/utils/useMediaQuery";
+import { useMediaQuery } from "@/utils/useMediaQuery";
 
 interface HeroProductProps {
   imageSrc: string;

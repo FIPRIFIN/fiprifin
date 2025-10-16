@@ -1,0 +1,15 @@
+:root {
+    
+/* === HEADER DESIGN TOKENS === */
+  --header-height-mobile: 56px;
+  --header-height-desktop: 64px;
+  --header-bg: rgba(13, 13, 13, 0.95);
+  --header-bg-scrolled: rgba(13, 13, 13, 0.98);
+  --header-fg: #ffffff;
+  --header-border: rgba(255, 255, 255, 0.08);
+  --header-border-scrolled: rgba(255, 255, 255, 0.06);
+  --header-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --header-shadow-scrolled: 0 3px 10px rgba(0, 0, 0, 0.25);
+  --header-blur: 12px;
+
+}

@@ -1,0 +1,65 @@
+/* Verwende diese Tokens für verschiedene UI-Dichten und Feedbacks.
+   - fast → kleine Mikro-Interaktionen (Buttons, Icons)
+   - base → Standard-Bewegungen (Hover, Dropdowns)
+   - slow → komplexe Übergänge (Modals, Page-Transitions)
+----------------------------------------------------------- */
+:root {
+--motion-ultrafast: 100ms; /* z. B. Hover-Feedback */
+--motion-fast: 150ms;      /* z. B. Button oder Icon */
+--motion-base: 300ms;      /* z. B. Overlay, Dropdown */
+--motion-slow: 500ms;      /* z. B. Page-Fade, Modal-Open */
+--motion-superslow: 800ms; /* z. B. Intro-Animationen */
+}
+/* === 📈 EASING CURVES – Bewegungsgefühl === */
+/* Definiert, wie sich eine Bewegung anfühlt.
+   - default → natürliche Standardkurve
+   - soft → weiche, gleichmäßige Bewegung
+   - spring → federndes Feedback
+   - bounce → dynamischer „Spring“-Effekt
+----------------------------------------------------------- */
+:root {
+--ease-linear: linear;                                     /* gleichmäßig */
+--ease-default: cubic-bezier(0.4, 0, 0.2, 1);              /* sanft beschleunigend – Material-Standard */
+--ease-soft: ease;                                         /* klassisch weich */
+--ease-in: cubic-bezier(0.4, 0, 1, 1);                     /* langsam startend, schnell endend */
+--ease-out: cubic-bezier(0, 0, 0.2, 1);                    /* schnell startend, sanft endend */
+--ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);               /* symmetrisch weich */
+--ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);          /* federnd – optional */
+--ease-spring: cubic-bezier(0.5, 1.25, 0.75, 1.0);         /* realistisch federnd */
+}
+
+/* === 🔁 TRANSITION SHORTHANDS – Einheitliche Übergänge === */
+/* Anstatt in Komponenten manuell „0.3s ease“ zu schreiben,
+   werden hier zentrale Standard-Kombinationen definiert.
+   - base → alle Eigenschaften, natürlich weich
+   - fast → für Hover oder kleine Bewegungen
+   - opacity → reine Fade-Effekte
+   - transform → Bewegungen, Rotationen, etc.
+----------------------------------------------------------- */
+
+:root {
+--transition-base: all var(--motion-base) var(--ease-default);
+--transition-fast: all var(--motion-fast) var(--ease-default);
+--transition-opacity: opacity var(--motion-base) var(--ease-soft);
+--transition-transform: transform var(--motion-fast) var(--ease-soft);
+}
+
+/* === ⏱️ MOTION UTILITIES – Feinsteuerung === */
+/* Für feine Kontrolle bei Sequenzen oder gestaffelten Effekten */
+
+:root {
+--reveal-distance: 10px; /* Standard-Verschiebung bei Slide-In-Effekten */
+--motion-delay-sm: 50ms; /* minimale Verzögerung – Micro Animation */
+--motion-delay-md: 150ms;
+--motion-delay-lg: 300ms;
+}
+
+/* === 🧘 ACCESSIBILITY SUPPORT === */
+/* Wenn Nutzer „Bewegungen reduzieren“ aktiviert haben,
+   werden Animationen deaktiviert – siehe prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .motion-optional {
+    animation: none !important;
+    transition: none !important;
+  }
+}

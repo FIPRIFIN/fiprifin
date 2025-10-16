@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import BaseHeader from "@/components/layout/BaseHeader";
+import BaseHeader from "@/components/ui/molecules/layout/BaseHeader";
 import Logo from "@/components/ui/atoms/brand/Logo";
 import LinkWrapper from "@/components/ui/molecules/layout/LinkWrapper";
 import LinkHeader from "@/components/ui/atoms/typography/LinkHeader";

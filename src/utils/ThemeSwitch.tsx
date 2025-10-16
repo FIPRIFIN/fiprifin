@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { setTheme, getSavedTheme, Theme } from "@/app/utils/theme";
+import { setTheme, getSavedTheme, Theme } from "@/utils/theme";
 
 export default function ThemeSwitch() {
   const [theme, setThemeState] = useState<Theme>("light");

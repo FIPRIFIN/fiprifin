@@ -1,6 +1,6 @@
 import {Text, Headline, HiddenHeadline, InlineLink} from "@/components/ui/atoms/typography";
-import BaseSection from "@/components/layout/BaseSection";
-import TextSection from "@/components/Sections/TextSection/TextSection";
+import BaseSection from "@/components/ui/molecules/layout/BaseSection";
+import TextSection from "@/components/ui/organisms/marketing/TextSection/TextSection";
 
 export default function DatenschutzPage() {
   return (

@@ -1,0 +1,69 @@
+  /* =========================================================
+   🔘 BUTTON SEMANTIC TOKENS – VEROSOMA FOUNDATION
+   ---------------------------------------------------------
+   Stellt zentrale Designwerte für alle Button-Varianten bereit.
+   Themes überschreiben diese Tokens, um Look & Feel anzupassen.
+   ========================================================= */
+
+:root {
+  /* === 🔤 TYPOGRAPHY & SPACING === */
+  --button-font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --button-font-weight: var(--font-weight-semibold);
+  --button-letter-spacing: var(--tracking-wide);
+
+  --button-padding-y-sm: 0.6rem;
+  --button-padding-x-sm: 1.2rem;
+  --button-padding-y-md: 0.9rem;
+  --button-padding-x-md: 1.8rem;
+  --button-padding-y-lg: 1.2rem;
+  --button-padding-x-lg: 2.2rem;
+
+  --button-radius: var(--radius-large);
+  --button-border-width: var(--border-width-thin);
+
+  /* === 🎨 COLOR & SURFACE TOKENS === */
+  /* Diese Basiswerte sind neutral und werden im Theme überschrieben. */
+  --button-bg-primary: var(--accent-gradient);
+  --button-bg-primary-hover: var(--accent-gradient-hover);
+  --button-bg-secondary: var(--color-surface);
+  --button-bg-secondary-hover: rgba(255, 255, 255, var(--opacity-surface));
+  --button-bg-ghost: transparent;
+  --button-bg-disabled: rgba(255, 255, 255, 0.1);
+
+  --button-text-primary: var(--color-text);
+  --button-text-secondary: var(--color-text);
+  --button-text-ghost: var(--color-accent);
+  --button-text-disabled: rgba(255, 255, 255, 0.4);
+
+  --button-border-color: var(--color-border);
+  --button-border-color-hover: var(--color-border-hover);
+  --button-border-color-active: var(--color-border-active);
+  --button-border-color-focus: var(--color-accent);
+
+  /* === 🌫️ SHADOW & DEPTH === */
+  --button-shadow: var(--shadow-md);
+  --button-shadow-hover: var(--shadow-lg);
+  --button-shadow-active: var(--shadow-sm);
+  --button-shadow-accent: var(--shadow-accent);
+  --button-shadow-accent-hover: var(--shadow-accent-hover);
+
+  /* === 🌀 EFFECTS === */
+  --button-blur: 12px;
+  --button-backdrop-saturation: 1.2;
+  --button-transform-hover: translateY(-2px);
+  --button-transform-active: translateY(0);
+  --button-transition: var(--transition-fast);
+  --button-opacity-hover: var(--opacity-hover);
+  --button-opacity-disabled: var(--opacity-disabled);
+
+  /* === ⚠️ STATUS COLORS === */
+  --button-success-bg: var(--status-success);
+  --button-error-bg: var(--status-error);
+  --button-warning-bg: var(--status-warning);
+
+
+  /* === ✨ GLOW (Optional) === */
+  --button-glow-start: rgba(0, 180, 255, 0.35);
+  --button-glow-end: rgba(0, 180, 255, 0.1);
+  --button-glow-opacity: 1;
+}

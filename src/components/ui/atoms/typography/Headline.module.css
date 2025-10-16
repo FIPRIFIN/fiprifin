@@ -65,7 +65,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 10px rgba(62, 166, 255, 0.3);
+  text-shadow: var(--text-shadow);
 }
 
 /* =======================================
@@ -85,7 +85,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 6px rgba(0, 180, 255, 0.2);
+  text-shadow: var(--text-shadow);
 }
 
 /* =======================================

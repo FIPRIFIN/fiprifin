@@ -1,0 +1,92 @@
+/* =========================================================
+   🧸 VEROSOMA THEME – MAMA BEAR v2
+   ---------------------------------------------------------
+   Sanfte Pastell-Ästhetik mit reduzierter Tiefe & Glow.
+   Gefühl: Geborgen, ruhig, klar, natürlich.
+   ========================================================= */
+
+[data-theme="calm"] {
+  /* === 🎨 COLOR ARCHITECTURE === */
+  --color-bg: #fdf9f8; /* warmes Off-White */
+  --color-text: #3f3333; /* weiches Dunkelbraun */
+  --color-subtext: #6d5d5d;
+  --color-accent: #f4a8a1; /* zartes Pfirsich-Rosé */
+  --color-error: #e8a3a3;
+  --color-success: #b9e3c3;
+  --color-warning: #f8e0b2;
+
+  --color-surface: rgba(255, 255, 255, 0.95);
+  --color-border: rgba(244, 168, 161, 0.1);
+  --color-border-hover: rgba(244, 168, 161, 0.18);
+  --color-surface-hover: rgba(244, 168, 161, 0.05);
+
+  /* === 🌈 Accent Gradients === */
+  --accent-gradient: linear-gradient(90deg, #f5a89f 0%, #f3b2a9 100%);
+  --accent-gradient-hover: linear-gradient(90deg, #f8d0c8 0%, #f5b1aa 100%);
+
+  /* =========================================================
+     🌫️ DEPTH SYSTEM – Ultra Soft Shadows
+     --------------------------------------------------------- */
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 8px 12px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 12px 20px rgba(0, 0, 0, 0.07);
+
+  --text-shadow: none; 
+
+  /* === ✨ Glow (drastisch reduziert) === */
+  --shadow-glow-accent: none;
+  --shadow-glow-accent-hover: none;
+  --shadow-glow-success: none;
+  --shadow-glow-error: none;
+
+  /* =========================================================
+     🔘 BUTTON SEMANTIC TOKENS – Soft Edition
+     --------------------------------------------------------- */
+  --button-text-primary: #ffffff;
+  --button-text-secondary: var(--color-text);
+  --button-text-ghost: var(--color-accent);
+  --button-text-disabled: rgba(63, 51, 51, 0.4);
+
+  --button-border-color: var(--color-border);
+  --button-border-color-hover: var(--color-border-hover);
+  --button-border-color-active: rgba(244, 168, 161, 0.25);
+  --button-border-color-focus: var(--color-accent);
+
+  --button-bg-primary: var(--accent-gradient);
+  --button-bg-primary-hover: var(--accent-gradient-hover);
+  --button-bg-secondary: rgba(255, 255, 255, 0.9);
+  --button-bg-secondary-hover: rgba(244, 168, 161, 0.08);
+  --button-bg-ghost: transparent;
+  --button-bg-disabled: rgba(63, 51, 51, 0.06);
+
+  --button-shadow: var(--shadow-xs);
+  --button-shadow-hover: var(--shadow-sm);
+  --button-shadow-active: var(--shadow-none);
+  --button-shadow-accent: var(--shadow-glow-accent);
+  --button-shadow-accent-hover: var(--shadow-glow-accent-hover);
+
+  --button-blur: 8px;
+  --button-backdrop-saturation: 1.05;
+  --button-opacity-hover: 0.9;
+  --button-opacity-disabled: 0.5;
+  --button-transform-hover: translateY(-1px);
+  --button-transform-active: translateY(0);
+  --button-transition: all 200ms ease-out;
+
+  --button-glow-start: transparent;
+  --button-glow-end: transparent;
+  --button-glow-opacity: 0;
+
+  /* =========================================================
+     🌷 EXTRAS – Calm Details
+     --------------------------------------------------------- */
+  --color-focus-ring: rgba(244, 168, 161, 0.4);
+  --color-selection: rgba(244, 168, 161, 0.25);
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-blur: 10px;
+  --glass-border: rgba(244, 168, 161, 0.08);
+  --glass-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,44 @@
+@import "@/styles/tokens/components/counter.css";
+
+/* ===========================
+   COUNTER – HERO BADGE STYLE
+=========================== */
+
+.counterText {
+  margin-top: var(--counter-margin-top);
+  text-align: center;
+  font-size: var(--counter-font-size-label);
+  font-weight: var(--counter-font-weight-label);
+  color: var(--counter-color-text);
+  opacity: var(--counter-opacity-base);
+  letter-spacing: var(--counter-letter-spacing-label);
+  transition: var(--counter-transition);
+  line-height: var(--counter-line-height);
+}
+
+.counter {
+  font-weight: var(--counter-font-weight);
+  color: var(--counter-color-accent);
+  background: var(--counter-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--counter-font-size);
+  letter-spacing: var(--counter-letter-spacing);
+  display: inline-block;
+  margin-right: var(--counter-gap);
+}
+
+.counterLabel {
+  color: var(--counter-color-label);
+  opacity: var(--counter-opacity-label);
+  font-weight: var(--counter-font-weight-label);
+  text-shadow: var(--counter-text-shadow-label);
+}
+
+/* === Interaktion === */
+.counterText:hover {
+  opacity: var(--counter-opacity-hover);
+  transform: scale(var(--counter-hover-scale));
+}

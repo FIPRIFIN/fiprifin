@@ -2,9 +2,9 @@ import "./../styles/globals.css";
 import "../styles/layout.css";
 import "../styles/typography.css";
 import type { Metadata } from "next";
-import Header from "@/components/ui/organisms/Header/Header";
-import Footer from "@/components/layout/Footer";
-import { PORTAL_ROOT_ID } from "@/app/utils/portal";
+import Header from "@/components/ui/organisms/Layout/Header/Header";
+import Footer from "@/components/ui/organisms/Layout/Footer/Footer";
+import { PORTAL_ROOT_ID } from "@/utils/portal";
 
 export const metadata: Metadata = {
   title: "Verosoma",

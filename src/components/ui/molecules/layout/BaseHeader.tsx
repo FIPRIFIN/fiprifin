@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./BaseHeader.module.css";
-import ScrollProgressBar from "../ui/atoms/ScrollProgressBar";
+import ScrollProgressBar from "../../atoms/visuals/ScrollProgressBar";
 
 interface BaseHeaderProps {
   /**

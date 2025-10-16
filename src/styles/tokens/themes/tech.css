@@ -1,0 +1,89 @@
+/* =========================================================
+   🧠 VEROSOMA THEME – TECH (v1)
+   ---------------------------------------------------------
+   Futuristisch, kühl, präzise.
+   Für UI-Demos, Tests & High-Tech-Stimmungen.
+   ========================================================= */
+
+[data-theme="tech"] {
+  /* === 🎨 COLOR ARCHITECTURE === */
+  --color-bg: #0a0c10; /* tiefes Graphitgrau */
+  --color-text: #e8f0fa; /* kühles, klares Weißblau */
+  --color-subtext: #94a3b8; /* blaugrau */
+  --color-accent: #00b4ff; /* helles Tech-Cyan */
+  --color-error: #ff4f64;
+  --color-success: #36e0a4;
+  --color-warning: #f8d57e;
+
+  --color-light-text: #111111;
+  --color-light-subtext: #333333;
+  --color-light-accent: #007aff;
+
+  --color-surface: rgba(20, 24, 32, 0.75);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-surface-hover: rgba(0, 180, 255, 0.25);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+
+  /* === 🌈 Accent Gradients === */
+  --accent-gradient: linear-gradient(90deg, #00b4ff 0%, #0072ff 100%);
+  --accent-gradient-hover: linear-gradient(90deg, #00e6a8 0%, #00b4ff 100%);
+
+  /* =========================================================
+     🌫️ DEPTH SYSTEM – Precision Shadows
+     --------------------------------------------------------- */
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 8px 18px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.65);
+
+  /* === 💡 GLOW & LIGHT SHADOWS === */
+  --shadow-glow-accent: 0 0 18px rgba(0, 180, 255, 0.45);
+  --shadow-glow-accent-hover: 0 0 24px rgba(0, 180, 255, 0.55);
+  --shadow-glow-success: 0 0 14px rgba(54, 224, 164, 0.45);
+  --shadow-glow-error: 0 0 14px rgba(255, 79, 100, 0.45);
+
+  /* =========================================================
+     🔘 BUTTON SEMANTIC TOKENS – Tech Edition
+     --------------------------------------------------------- */
+  --button-text-primary: #ffffff;
+  --button-text-secondary: var(--color-text);
+  --button-text-ghost: var(--color-accent);
+  --button-text-disabled: rgba(255, 255, 255, 0.4);
+
+  --button-border-color: var(--color-border);
+  --button-border-color-hover: var(--color-border-hover);
+  --button-border-color-active: rgba(255, 255, 255, 0.25);
+  --button-border-color-focus: var(--color-accent);
+
+  --button-bg-primary: linear-gradient(135deg, #00b4ff 0%, #004eff 100%);
+  --button-bg-primary-hover: linear-gradient(135deg, #00e6a8 0%, #009eff 100%);
+  --button-bg-secondary: rgba(30, 35, 45, 0.8);
+  --button-bg-secondary-hover: rgba(0, 180, 255, 0.12);
+  --button-bg-ghost: transparent;
+  --button-bg-disabled: rgba(255, 255, 255, 0.1);
+
+  --button-shadow: var(--shadow-md);
+  --button-shadow-hover: var(--shadow-lg);
+  --button-shadow-active: var(--shadow-xs);
+  --button-shadow-accent: var(--shadow-glow-accent);
+  --button-shadow-accent-hover: var(--shadow-glow-accent-hover);
+
+  /* === ✨ Text Glow === */
+  --text-shadow: 0 0 12px rgba(0, 180, 255, 0.35);
+
+  /* === ✨ Glow Gradient === */
+  --button-glow-start: rgba(0, 180, 255, 0.4);
+  --button-glow-end: rgba(0, 100, 255, 0.2);
+  --button-glow-opacity: 1;
+
+  /* --- Effects --- */
+  --button-blur: 14px;
+  --button-backdrop-saturation: 1.25;
+  --button-opacity-hover: 0.95;
+  --button-opacity-disabled: 0.45;
+  --button-transform-hover: translateY(-3px);
+  --button-transform-active: translateY(0);
+  --button-transition: all 180ms ease-in-out;
+}

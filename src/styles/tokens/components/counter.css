@@ -1,0 +1,37 @@
+/* =========================================================
+   🔢 VEROSOMA COUNTER TOKENS
+   ---------------------------------------------------------
+   Token-Layer für das Counter-Atom (Hero Badge Style)
+   Basierend auf bestehendem Counter.module.css
+   ========================================================= */
+
+:root {
+  /* === 🔤 TYPOGRAPHY === */
+  --counter-font-weight: 700;
+  --counter-font-weight-label: 500;
+  --counter-font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  --counter-font-size-label: clamp(1.2rem, 2.6vw, 2rem);
+  --counter-letter-spacing: 0.4px;
+  --counter-letter-spacing-label: 0.25px;
+  --counter-line-height: 1.2;
+
+  /* === 🎨 COLORS === */
+  --counter-color-text: var(--color-text);
+  --counter-color-label: var(--color-text);
+  --counter-color-accent: var(--color-accent);
+  --counter-gradient: var(--accent-gradient);
+
+  /* === 🧊 EFFECTS === */
+  --counter-text-shadow-label: 0 0 4px rgba(0, 0, 0, 0.3);
+
+  /* === 📏 SPACING === */
+  --counter-margin-top: var(--space-2);
+  --counter-gap: 0.25rem; /* Abstand Zahl–Label */
+
+  /* === ⚡ MOTION === */
+  --counter-transition: opacity 0.3s ease, transform 0.3s ease;
+  --counter-hover-scale: 1.015;
+  --counter-opacity-base: var(--opacity-90);
+  --counter-opacity-hover: var(--opacity-100);
+  --counter-opacity-label: var(--opacity-80);
+}

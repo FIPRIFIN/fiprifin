@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { Button, ButtonWrapper} from "@/components/ui/atoms/buttons";
-import BaseSection from "@/components/layout/BaseSection";
+import BaseSection from "@/components/ui/molecules/layout/BaseSection";
 import styles from "./ComingSoonSection.module.css";
 import { Text, Headline } from "@/components/ui/atoms/typography";
-import { useMediaQuery } from "@/app/utils/useMediaQuery";
+import { useMediaQuery } from "@/utils/useMediaQuery";
 
 interface ComingSoonSectionProps {
   /**

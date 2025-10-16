@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
-import BaseSection from "@/components/layout/BaseSection";
+import BaseSection from "@/components/ui/molecules/layout/BaseSection";
 import Headline from "@/components/ui/atoms/typography/Headline";
 import Text from "@/components/ui/atoms/typography/Text";
-import ArticleContainer from "@/components/ui/molecules/ArticleContainer";
+import ArticleContainer from "@/components/ui/molecules/Reading/ArticleContainer";
 import styles from "./TextSection.module.css";
 
 interface TextSectionProps {

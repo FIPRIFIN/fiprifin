@@ -1,6 +1,6 @@
-import TextSection from "@/components/Sections/TextSection/TextSection";
+import TextSection from "@/components/ui/organisms/marketing/TextSection/TextSection";
 import { Text, Headline, InlineLink, HiddenHeadline } from "@/components/ui/atoms/typography";
-import BaseSection from "@/components/layout/BaseSection";
+import BaseSection from "@/components/ui/molecules/layout/BaseSection";
 
 export default function ImpressumPage() {
   return (

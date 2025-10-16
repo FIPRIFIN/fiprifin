@@ -3,10 +3,10 @@
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
-import Container from "@/components/layout/Container";
+import Container from "@/components/ui/molecules/layout/Container";
 import styles from "./Footer.module.css";
 import { useState } from "react";
-import ThemeSwitch from "../ui/ThemeSwitch";
+import ThemeSwitch from "@/utils/ThemeSwitch";
 
 const TAP_PULSE_DURATION = 250;
 

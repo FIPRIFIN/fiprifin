@@ -1,0 +1,101 @@
+/* =========================================================
+   ☀️ VEROSOMA THEME – LIGHT (Base Reference Theme)
+   ---------------------------------------------------------
+   Harmonisch abgestimmt auf das Dark Theme,
+   nutzt dieselben Token-Strukturen für volle Konsistenz.
+   ========================================================= */
+
+[data-theme="light"] {
+  /* === 🎨 COLOR ARCHITECTURE === */
+  --color-bg: #f8fafc; /* sanftes, neutrales Weiß */
+  --color-text: #111111;
+  --color-subtext: #444444;
+  --color-accent: #3ea6ff; /* Markenblau bleibt gleich */
+  --color-error: #e74c3c;
+  --color-success: #2ecc71;
+
+  --color-light-text: #ffffff;
+  --color-light-subtext: #e8e8e8;
+  --color-light-accent: #0072ff;
+  --color-light-border: rgba(0, 0, 0, 0.08);
+
+  /* === 🌈 Accent Gradients === */
+  --accent-gradient: linear-gradient(90deg, #00b4ff 0%, #0072ff 100%);
+  --accent-gradient-hover: linear-gradient(90deg, #00e6a8 0%, #00b4ff 100%);
+
+  /* === 🩶 Surfaces & Borders === */
+  --color-surface: rgba(255, 255, 255, 0.9);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-surface-hover: rgba(0, 114, 255, 0.06);
+  --color-border-hover: rgba(0, 0, 0, 0.12);
+
+  /* =========================================================
+     🌫️ DEPTH SYSTEM – Shadows & Glows
+     ---------------------------------------------------------
+     Helle Variante des Dark Depth Systems.
+     Dezenter, weicher, luftiger.
+     ========================================================= */
+
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 24px rgba(0, 0, 0, 0.14);
+  --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.18);
+
+  /* === 💡 GLOW & LIGHT SHADOWS === */
+  --shadow-glow-accent: 0 0 12px rgba(0, 114, 255, 0.25);
+  --shadow-glow-accent-hover: 0 0 18px rgba(0, 114, 255, 0.35);
+  --shadow-glow-error: 0 0 12px rgba(231, 76, 60, 0.25);
+  --shadow-glow-success: 0 0 12px rgba(46, 204, 113, 0.25);
+
+  --text-shadow: 0 0 6px rgba(0, 180, 255, 0.2);
+
+
+  /* =========================================================
+     🔘 BUTTON SEMANTIC TOKENS – Light Theme Mapping
+     ---------------------------------------------------------
+     Primäre Grundlage für .button (Base, Primary, Secondary, Ghost)
+     ========================================================= */
+
+  /* --- Base --- */
+  --button-text-primary: #ffffff;
+  --button-text-secondary: var(--color-text);
+  --button-text-ghost: var(--color-accent);
+  --button-text-disabled: rgba(0, 0, 0, 0.4);
+
+  --button-border-color: var(--color-border);
+  --button-border-color-hover: var(--color-border-hover);
+  --button-border-color-active: rgba(0, 0, 0, 0.2);
+  --button-border-color-focus: var(--color-accent);
+
+  /* --- Backgrounds --- */
+  --button-bg-primary: var(--accent-gradient);
+  --button-bg-primary-hover: var(--accent-gradient-hover);
+  --button-bg-secondary: rgba(255, 255, 255, 0.85);
+  --button-bg-secondary-hover: rgba(0, 114, 255, 0.08);
+  --button-bg-ghost: transparent;
+  --button-bg-disabled: rgba(0, 0, 0, 0.05);
+
+  /* --- Shadows --- */
+  --button-shadow: var(--shadow-sm);
+  --button-shadow-hover: var(--shadow-md);
+  --button-shadow-active: var(--shadow-xs);
+  --button-shadow-accent: var(--shadow-glow-accent);
+  --button-shadow-accent-hover: var(--shadow-glow-accent-hover);
+
+  /* --- Effects --- */
+  --button-blur: 10px;
+  --button-backdrop-saturation: 1.15;
+  --button-opacity-hover: var(--opacity-hover);
+  --button-opacity-disabled: var(--opacity-disabled);
+  --button-transform-hover: translateY(-2px);
+  --button-transform-active: translateY(0);
+  --button-transition: var(--transition-fast);
+
+   /* === ✨ GLOW (Optional) === */
+  --button-glow-start: rgba(0, 180, 255, 0.35);
+  --button-glow-end: rgba(0, 180, 255, 0.1);
+  --button-glow-opacity: 1;
+}
