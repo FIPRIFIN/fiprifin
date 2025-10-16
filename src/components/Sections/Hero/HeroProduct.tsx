@@ -6,6 +6,7 @@ import { Button, ButtonWrapper} from "@/components/ui/atoms/buttons";
 import BaseSection from "@/components/layout/BaseSection";
 import styles from "./HeroProduct.module.css";
 import { Text } from "@/components/ui/atoms/typography";
+import { useMediaQuery } from "@/app/utils/useMediaQuery";
 
 interface HeroProductProps {
   imageSrc: string;
@@ -35,6 +36,13 @@ export default function HeroProduct({
   id,
   ariaLabelledby,
 }: HeroProductProps) {
+
+  const isTablet = useMediaQuery("(min-width: 768px)");
+  const isDesktop = useMediaQuery("(min-width: 961px)");
+
+  const buttonSize = isDesktop ? "md" : isTablet ? "md" : "sm";
+  const align = isDesktop ? "left" : isTablet ? "center" : "center";
+
   return (
     <BaseSection id={id} background="transparent" ariaLabelledby={ariaLabelledby}>
       <div className={styles.wrapper}>
@@ -59,12 +67,12 @@ export default function HeroProduct({
 
           <Text>{description}</Text>
 
-          <ButtonWrapper>
-            <Button href={ctaPrimary.href} variant="primary">
+          <ButtonWrapper spacing="md" align={align} className={styles.ctaWrapper}>
+            <Button href={ctaPrimary.href} variant="primary" className={styles.primaryCTA} size={buttonSize}>
               {ctaPrimary.label}
             </Button>
             {ctaSecondary && (
-              <Button href={ctaSecondary.href} variant="ghost">
+              <Button href={ctaSecondary.href} variant="ghost" className={styles.secondaryCTA} size={buttonSize}>
                 {ctaSecondary.label}
               </Button>
             )}

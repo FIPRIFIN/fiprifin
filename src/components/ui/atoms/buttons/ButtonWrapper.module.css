@@ -39,15 +39,15 @@
 }
 
 .space-sm {
-  margin-top: var(--space-1);
-}
-
-.space-md {
   margin-top: var(--space-2);
 }
 
+.space-md {
+  margin-top: var(--space-4);
+}
+
 .space-lg {
-  margin-top: var(--space-3);
+  margin-top: var(--space-6);
 }
 
 /* ============================================

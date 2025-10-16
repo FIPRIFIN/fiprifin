@@ -28,9 +28,9 @@ export default function Header() {
 
       {/* === Desktop Navigation === */}
       <div className={styles.navDesktop}>
-        <LinkWrapper direction="horizontal" align="right" gap="space-2">
-          <LinkHeader href="/about">Über uns</LinkHeader>
-          <LinkHeader href="/shop">Shop</LinkHeader>
+        <LinkWrapper direction="horizontal" align="right" gap="space-3">
+          <LinkHeader href="/dna">DNA</LinkHeader>
+          <LinkHeader href="/insights">Insights</LinkHeader>
           <LinkHeader href="/contact">Kontakt</LinkHeader>
         </LinkWrapper>
       </div>
@@ -39,8 +39,8 @@ export default function Header() {
       <div className={styles.navMobile}>
         <BurgerMenu>
           <LinkWrapper direction="vertical" align="center" gap="space-3">
-            <LinkHeader href="/about">Über uns</LinkHeader>
-            <LinkHeader href="/shop">Shop</LinkHeader>
+            <LinkHeader href="/dna">DNA</LinkHeader>
+            <LinkHeader href="/insights">Insights</LinkHeader>
             <LinkHeader href="/contact">Kontakt</LinkHeader>
           </LinkWrapper>
         </BurgerMenu>

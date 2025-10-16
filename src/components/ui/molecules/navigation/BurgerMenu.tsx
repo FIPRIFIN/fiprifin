@@ -26,6 +26,11 @@ export default function BurgerMenu({ children }: BurgerMenuProps) {
       className={`${styles.overlay} ${open ? styles.open : ""}`}
       role="dialog"
       aria-modal="true"
+      onClick={(e) => {
+      // Wenn ein <a> Element oder dessen Kind angeklickt wurde → Menü schließen
+      const target = e.target as HTMLElement;
+      if (target.closest("a")) setOpen(false);
+    }}
     >
       <nav className={styles.nav} role="navigation">
         {children}
@@ -52,6 +57,10 @@ export default function BurgerMenu({ children }: BurgerMenuProps) {
           className={`${styles.overlay} ${open ? styles.open : ""}`}
           role="dialog"
           aria-modal="true"
+          onClick={(e) => {
+          const target = e.target as HTMLElement;
+          if (target.closest("a")) setOpen(false);
+      }}
         >
           <nav className={styles.nav}>{children}</nav>
 

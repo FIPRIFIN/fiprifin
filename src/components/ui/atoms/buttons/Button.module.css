@@ -162,7 +162,7 @@
    ========================================================= */
 @media (max-width: 768px) {
   .button {
-    width: 100%;
+    width: 50%;
     font-size: var(--font-size-body-sm);
     padding: 1rem 0;
   }

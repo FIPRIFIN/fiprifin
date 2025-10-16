@@ -8,11 +8,13 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-left: var(--space-6);
 }
 
 /* === Desktop Navigation === */
 .navDesktop {
   display: none;
+  margin-right: var(--space-6);
 }
 
 /* === Mobile Navigation === */
@@ -20,6 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-right: var(--space-6);
 }
 
 
@@ -27,10 +30,14 @@
 @media (min-width: 768px) {
   .navDesktop {
     display: flex;
-    margin-right: var(--space-4)
+    margin-right: var(--space-8)
   }
 
   .navMobile {
     display: none;
+  }
+
+  .left {
+    margin-left: var(--space-8);
   }
 }
