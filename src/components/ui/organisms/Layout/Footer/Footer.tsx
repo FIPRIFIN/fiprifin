@@ -7,6 +7,9 @@ import Container from "@/components/ui/molecules/layout/Container";
 import styles from "./Footer.module.css";
 import { useState } from "react";
 import ThemeSwitch from "@/utils/ThemeSwitch";
+import Divider from "@/components/ui/atoms/visuals/Divider";
+import SocialLinks from "@/components/ui/molecules/socials/SocialLinks";
+import CopyrightNotice from "@/components/ui/atoms/meta/CopyrightNotice";
 
 const TAP_PULSE_DURATION = 250;
 
@@ -58,36 +61,14 @@ export default function Footer() {
               );
             })}
           </div>
-
-          {/* === SOCIALS === */}
-          <div className={styles.socials}>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <FaInstagram size={22} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin size={22} />
-            </a>
-          </div>
+          <SocialLinks
+            socials={["instagram", "linkedin", "github", "x"]}
+            layout="horizontal"
+            size={22}
+          />
           <ThemeSwitch />
-
-          {/* === Divider === */}
-          <div className={styles.divider} />
-
-          {/* === Copyright === */}
-          <div className={styles.copy}>
-            © {new Date().getFullYear()} FIPRIFIN – First Principle Finance. Alle
-            Rechte vorbehalten.
-          </div>
+          <Divider variant="subtle" width="100%" className={styles.divider} />
+          <CopyrightNotice brand="Verosoma" />
         </div>
       </Container>
     </motion.footer>

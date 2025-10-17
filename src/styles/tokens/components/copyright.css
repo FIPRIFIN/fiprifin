@@ -1,0 +1,7 @@
+:root {
+    --copyright-font-size: 0.85rem;
+    --copyright-color: var(--color-subtext);
+    --copyright-opacity: 0.85;
+    --copyright-line-height: 1.4;
+    --copyright-letter-spacing: 0.2px;
+}

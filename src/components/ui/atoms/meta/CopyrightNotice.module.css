@@ -1,0 +1,13 @@
+.copy {
+  font-size: var(--copyright-font-size);
+  color: var(--copyright-color);
+  opacity: var(--copyright-opacity);
+  line-height: var(--copyright-line-height);
+  text-align: center;
+  letter-spacing: var(--copyright-letter-spacing);
+  transition: var(--transition-opacity);
+}
+
+.copy:hover {
+  opacity: var(--opacity-hover);
+}

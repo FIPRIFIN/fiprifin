@@ -96,5 +96,18 @@
   --button-transform-hover: translateY(-2px);
   --button-transform-active: translateY(0);
   --button-transition: var(--transition-fast);
+
+  /* =========================================================
+   🌍 BASE COPYRIGHT TOKENS – global defaults
+   ---------------------------------------------------------
+   Diese Werte gelten als Basis für alle Themes,
+   falls ein Theme keine eigenen Overrides definiert.
+   ========================================================= */
+
+  --copyright-font-size: 0.85rem;
+  --copyright-color: var(--color-subtext);
+  --copyright-opacity: 0.85;
+  --copyright-line-height: 1.4;
+  --copyright-letter-spacing: 0.2px;
 }
 

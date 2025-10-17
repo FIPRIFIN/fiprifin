@@ -1,0 +1,47 @@
+/* =========================================
+   ⚡ Divider Atom
+   Reusable visual separator
+   Theme-aware via CSS variables
+   ========================================= */
+
+.divider {
+  display: block;
+  border: none;
+  opacity: var(--opacity-60);
+  transition: opacity var(--motion-base) var(--ease-soft);
+}
+
+/* --- Orientation --- */
+.horizontal {
+  align-self: stretch;
+}
+
+.vertical {
+  align-self: stretch;
+}
+
+/* --- Variants --- */
+.subtle {
+  background-color: var(--color-border);
+}
+
+.accent {
+  background-color: var(--color-accent);
+  opacity: var(--opacity-60);
+}
+
+.gradient {
+  background: var(--accent-gradient);
+  opacity: var(--opacity-80);
+}
+
+/* --- Hover Feedback --- */
+.divider:hover {
+  opacity: var(--opacity-100);
+}
+
+@media (min-width: 768px) {
+  .divider {
+    opacity: var(--opacity-80);
+  }
+}

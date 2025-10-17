@@ -54,6 +54,33 @@
   width: 100%;
 }
 
+/* ============================================
+   🧩 Icon Mode (z. B. Social Links)
+============================================ */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  transition:
+    background-color var(--motion-base) var(--ease-soft),
+    transform var(--motion-base) var(--ease-soft),
+    opacity var(--motion-base) var(--ease-soft);
+}
+
+/* Subtle hover background */
+.icon:hover {
+  background-color: var(--color-surface-hover);
+  transform: scale(1.05);
+}
+
+.icon:active {
+  transform: scale(0.97);
+}
+
+
 /* === Responsive: leicht größer auf Desktop === */
 @media (min-width: 768px) {
   .linkHeader {
