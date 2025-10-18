@@ -19,14 +19,14 @@
    🌕 TONES
 ============================================ */
 .light {
-  background: var(--gray-100);
+  background: #fff;
   color: var(--gray-900);
   backdrop-filter: blur(12px) saturate(1.2);
 }
 
 .dark {
-  background: rgba(25, 25, 25, 0.8);
-  color: var(--color-text);
+  background: #fff;
+  color: var(--gray-900);
   backdrop-filter: blur(10px) saturate(1.3);
 }
 
