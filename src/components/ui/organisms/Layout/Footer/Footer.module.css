@@ -1,141 +1,38 @@
-/* === BASIS === */
+/* ==========================================================
+   🧱 VEROSOMA FOOTER (Motion Wrapper)
+   Role: Layout / Animation only
+   ----------------------------------------------------------
+   - Keine Farben, keine Border, kein Padding
+   - Nur Struktur, Centering, Motion, Responsive Verhalten
+========================================================== */
+
 .footer {
   position: relative;
-  z-index: 10;
-  background: rgba(13, 13, 13, 0.55);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.35);
-  color: var(--color-text);
-  padding: 3rem 1.5rem 2.5rem;
-  text-align: center;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-}
-
-/* === INNER WRAPPER === */
-.inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* === LINK BUTTONS === */
-.linkButton {
-  background: none;
-  border: none;
-  color: var(--color-text);
-  text-decoration: none;
-  font-size: 0.95rem;
-  opacity: 0.85;
-  position: relative;
-  cursor: pointer;
-  transition: color 0.25s ease, opacity 0.25s ease;
-}
-
-.linkButton::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0%;
-  height: 1px;
-  background: var(--accent-gradient);
-  transition: width 0.3s ease, opacity 0.3s ease;
-}
-
-/* Hover + Active kombinieren sich harmonisch */
-.linkButton:hover,
-.linkButton.active {
-  color: var(--color-accent);
-  opacity: 1;
-}
-
-.linkButton:hover::after,
-.linkButton.active::after {
+  z-index: var(--z-index-footer, 10);
   width: 100%;
-  opacity: 1;
-}
 
-/* === TapPulse Animation auf Mobile === */
-.linkButton:active::after {
-  animation: tapPulse 0.25s ease forwards;
-}
-
-@keyframes tapPulse {
-  0% {
-    width: 0%;
-    opacity: 1;
-  }
-  60% {
-    width: 100%;
-    opacity: 1;
-  }
-  100% {
-    width: 100%;
-    opacity: 0;
-  }
-}
-
-/* === LINKS WRAPPER === */
-.links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  font-size: 0.95rem;
-}
-
-/* === SOCIAL ICONS === */
-.socials {
+  /* Layout */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--space-2);
+  margin-top: var(--space-5);
+
+  /* Keine visuellen Stile mehr hier */
+  overflow: hidden;
+
+  /* Motion Transition */
+  transition: transform var(--motion-base) var(--ease-soft),
+              opacity var(--motion-base) var(--ease-soft);
 }
 
-.socials a {
-  color: var(--color-accent);
-  opacity: 0.85;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.socials a:hover {
-  opacity: 0.65;
-  transform: translateY(-2px);
-}
-
-
-/* === COPYRIGHT === */
-.copy {
-  font-size: 0.85rem;
-  color: var(--color-subtext);
-  opacity: 0.85;
-  line-height: 1.4;
-  text-align: center;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
+/* === Responsive Adjustment (optional, falls nötig) === */
+@media (min-width: 768px) {
   .footer {
-    padding: 2.2rem 1rem 1.8rem;
-  }
-
-  .links {
-    gap: 1.2rem;
-    font-size: 0.9rem;
-  }
-
-  .copy {
-    font-size: 0.8rem;
+    justify-content: center;
   }
 }
 
-/* === SMOOTH REVEAL === */
+/* === Animation Fallback (falls Motion nicht aktiv ist) === */
 @media (prefers-reduced-motion: no-preference) {
   .footer {
     animation: fadeInUp 0.6s ease-in-out;

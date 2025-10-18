@@ -1,0 +1,22 @@
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.link {
+  font-size: var(--font-size-body-sm);
+  opacity: 0.85;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.link:hover {
+  opacity: var(--opacity-100);
+}
+
+.active {
+  color: var(--color-accent);
+  opacity: var(--opacity-100);
+}

@@ -109,5 +109,19 @@
   --copyright-opacity: 0.85;
   --copyright-line-height: 1.4;
   --copyright-letter-spacing: 0.2px;
+
+   /* === FOOTER TOKENS === */
+  --footer-bg: transparent;
+  --footer-fg: var(--color-text);
+  --footer-border-color: var(--color-border); 
+  --footer-border-width: 1px;
+  --footer-shadow: 0 -4px 18px rgba(0, 0, 0, 0.35);
+
+  --footer-gap: var(--space-3);
+  --footer-padding-y-mobile: var(--space-4);
+  --footer-padding-x-mobile: var(--space-2);
+  --footer-padding-y-desktop: var(--space-6);
+  --footer-padding-x-desktop: var(--space-3);
+  --footer-max-width: 1200px;
 }
 
