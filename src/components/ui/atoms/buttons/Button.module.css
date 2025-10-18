@@ -12,7 +12,6 @@
   font-size: var(--font-size-body);
   letter-spacing: var(--button-letter-spacing);
   text-align: center;
-  text-decoration: none;
 
   padding: var(--button-padding-y-md) var(--button-padding-x-md);
   border-radius: var(--button-radius);
@@ -46,6 +45,7 @@
   border-color: var(--button-border-color);
   box-shadow: var(--button-shadow-accent);
   background-size: 200% 200%;
+  text-decoration: none;
 }
 
 .primary:hover {
@@ -65,6 +65,7 @@
   color: var(--button-text-secondary);
   border-color: var(--button-border-color);
   box-shadow: var(--button-shadow);
+  text-decoration: none;
 }
 
 .secondary:hover {
@@ -86,6 +87,10 @@
   color: var(--button-text-ghost);
   border-color: var(--button-border-color-hover);
   box-shadow: none;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: var(--space-1);
+  text-decoration-thickness: 2px;
 }
 
 .ghost:hover {
