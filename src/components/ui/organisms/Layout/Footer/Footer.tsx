@@ -23,8 +23,9 @@ export default function Footer() {
       <MotionWrapper 
         className={styles.footer} 
         variant="fadeIn" 
-        delay={0.1} 
-        duration={0.8}
+        delay={0.2} 
+        duration="base"
+        easing="spring"
       >
         <BaseFooter>
           <FooterLinks links={links} />
