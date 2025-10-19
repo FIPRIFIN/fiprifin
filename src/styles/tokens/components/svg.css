@@ -1,0 +1,83 @@
+/* ============================================
+   🧩 SVG TOKENS + RESPONSIVE UTILITIES (global)
+   ============================================ */
+
+/* ---- Globale Tokens ---- */
+:root {
+  /* 📏 Fixed Base Sizes */
+  --svg-size-xs: 12px;
+  --svg-size-sm: 24px;
+  --svg-size-md: 48px;
+  --svg-size-lg: 160px;
+  --svg-size-xl: 320px;
+
+  /* 🎨 Farbrollen */
+  --svg-color-primary: var(--color-accent);
+  --svg-color-secondary: var(--color-text);
+  --svg-color-muted: rgba(255, 255, 255, 0.55);
+  --svg-color-success: var(--status-success, #4cd964);
+  --svg-color-error: var(--status-error, #ff4d4f);
+}
+
+/* ---- Basis Wrapper ---- */
+.svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+/* ---- Größen Utilities ---- */
+.svg--xs { width: var(--svg-size-xs); height: var(--svg-size-xs); }
+.svg--sm { width: var(--svg-size-sm); height: var(--svg-size-sm); }
+.svg--md { width: var(--svg-size-md); height: var(--svg-size-md); }
+.svg--lg { width: var(--svg-size-lg); height: var(--svg-size-lg); }
+.svg--xl { width: var(--svg-size-xl); height: var(--svg-size-xl); }
+
+.svg svg {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  max-width: 100%;
+}
+
+/* ---- Form-Utilities ---- */
+.svg--rounded {
+  border-radius: var(--radius-base);
+  overflow: hidden; /* wichtig, damit das SVG auch wirklich geclippt wird */
+}
+
+.svg--circle {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.svg--shadow {
+  box-shadow: var(--shadow-md);
+}
+
+/* ---- Farbrollen ---- */
+.svg--primary   { color: var(--svg-color-primary); }
+.svg--secondary { color: var(--svg-color-secondary); }
+.svg--muted     { color: var(--svg-color-muted); }
+.svg--success   { color: var(--svg-color-success); }
+.svg--error     { color: var(--svg-color-error); }
+
+/* === Responsive Scaling === */
+@media (min-width: 768px) {
+  :root {
+    --svg-size-lg: 220px;
+    --svg-size-xl: 360px;
+  }
+}
+
+@media (min-width: 961px) {
+  :root {
+    --svg-size-lg: 360px;
+    --svg-size-xl: 440px; /* entspricht deinem Produktcover-Look */
+  }
+}

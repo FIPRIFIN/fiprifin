@@ -1,0 +1,55 @@
+/* ==========================================
+   🧩 CONTENT SPLIT – 2-Spalten Layout
+========================================== */
+
+.split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.reverse {
+  flex-direction: column-reverse;
+}
+
+/* === CHILDREN === */
+.visual {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === DESKTOP VERSION === */
+@media (min-width: 961px) {
+  .split {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .reverse {
+    flex-direction: row-reverse;
+  }
+
+  .visual,
+  .content {
+    flex: 1 1 50%;
+  }
+
+  .content {
+    align-items: flex-start;
+  }
+
+ 
+}

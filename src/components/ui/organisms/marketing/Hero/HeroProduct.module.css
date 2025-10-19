@@ -12,6 +12,7 @@
   gap: var(--space-3);
 }
 
+/* === Visual-Wrapper für Bild oder SVG === */
 .coverVisual {
   order: -1;
   width: 100%;
@@ -22,15 +23,17 @@
   align-items: center;
 }
 
-.coverImage {
+/* === Bild ODER SVG selbst === */
+.coverVisual img,
+.coverVisual .svg {
   width: 100%;
   max-width: 340px;
   height: auto;
   border-radius: var(--radius-large);
   object-fit: contain;
   box-shadow: var(--shadow-sm);
-  transition: 
-    transform var(--motion-slow) var(--ease-soft), 
+  transition:
+    transform var(--motion-slow) var(--ease-soft),
     opacity var(--motion-slow) var(--ease-soft);
 }
 

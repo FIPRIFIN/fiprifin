@@ -1,22 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import { Button, ButtonWrapper} from "@/components/ui/atoms/buttons";
 import BaseSection from "@/components/ui/molecules/layout/BaseSection";
 import styles from "./ComingSoonSection.module.css";
 import { Text, Headline } from "@/components/ui/atoms/typography";
 import { useMediaQuery } from "@/utils/useMediaQuery";
+import SvgDynamic from "@/components/ui/atoms/visuals/SvgDynamic";
+import ContentSplit from "@/components/ui/molecules/layout/ContentSplit";
 
 interface ComingSoonSectionProps {
-  /**
-   * Bildquelle (Produktcover o.Ä.)
-   */
-  imageSrc: string;
 
-  /**
-   * Alt-Text für Barrierefreiheit & SEO
-   */
-  imageAlt: string;
 
   /**
    * Überschrift für das Produkt
@@ -45,8 +38,6 @@ interface ComingSoonSectionProps {
  * Mobile-first, SEO-ready, nutzt BaseSection für Layout, Blur & Animation.
  */
 export default function ComingSoonSection({
-  imageSrc,
-  imageAlt,
   title,
   description,
   cta,
@@ -60,24 +51,12 @@ export default function ComingSoonSection({
   const buttonSize = isDesktop ? "md" : isTablet ? "md" : "sm";
   const alignButton = isDesktop ? "left" : isTablet ? "center" : "center";
 
+  const visual = (
+      <SvgDynamic src="/images/produktcover/TestProduktFlowsvg.svg" className="svg svg--xl svg--primary svg--rounded" />
+  )
 
-  return (
-    <BaseSection id={id} background="transparent" ariaLabelledby={ariaLabelledby}>
-      <div className={styles.wrapper}>
-        {/* === Produktbild === */}
-        <div className={styles.visual}>
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            className={styles.image}
-            width={460}
-            height={460}
-            unoptimized
-          />
-        </div>
-
-        {/* === Inhalt === */}
-        <div className={styles.content}>
+  const content = (
+    <div className={styles.content}>
           <Headline level="h2" variant="gradient" align="left" size="md">
             {title}
           </Headline>
@@ -89,8 +68,13 @@ export default function ComingSoonSection({
               {cta.label}
             </Button>
           </ButtonWrapper>
-        </div>
-      </div>
+    </div>
+  )
+
+
+  return (
+    <BaseSection id={id} background="transparent" ariaLabelledby={ariaLabelledby}>
+      <ContentSplit visual={visual} content={content} />
     </BaseSection>
   );
 }

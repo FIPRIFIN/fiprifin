@@ -27,14 +27,14 @@ export default function Home() {
               text="Verosoma Budget – Das digitale Haushaltsbuch und Finanzplaner für Familien"
               id="verosoma-budget-heading"
             />
-            <HeroProduct
-              imageSrc="/images/produktcover/TestProduktBalancesvg.svg"
-              imageAlt="Produktcover von Verosoma Budget – digitales Haushaltsbuch Tool für Familien"
-              description="Struktur schafft Freiheit. Dein klarer Start in die Finanzordnung – Schritt für Schritt. Das digitale Haushaltsbuch für junge Familien und moderne Haushalte – gestaltet für Übersicht, Kontrolle und Ruhe."
-              counterTarget={1284}
-              ctaPrimary={{ label: "Jetzt kaufen", href: "/shop/verosoma-budget" }}
-              ctaSecondary={{ label: "Verstehen", href: "/verosoma-budget" }}
-            />
+             <HeroProduct
+                description="Struktur schafft Freiheit. Dein klarer Start in die Finanzordnung – Schritt für Schritt. Das digitale Haushaltsbuch für junge Familien und moderne Haushalte – gestaltet für Übersicht, Kontrolle und Ruhe."
+                counterTarget={1284}
+                ctaPrimary={{ label: "Jetzt kaufen", href: "/shop/verosoma-budget" }}
+                ctaSecondary={{ label: "Verstehen", href: "/verosoma-budget" }}
+                id="verosoma-hero"
+                ariaLabelledby="verosoma-budget-heading"
+              />
           </div>
           <HiddenHeadline
             as="h2"
@@ -42,8 +42,6 @@ export default function Home() {
             id="verosoma-flow-heading"
           />
           <ComingSoonSection
-            imageSrc="/images/produktcover/TestProduktFlowsvg.svg"
-            imageAlt="Produktcover von Verosoma Flow – digitales Finanzcoaching Tool (Coming Soon)"
             title="Verosoma Flow – Coming Soon"
             description={
               <>

@@ -10,7 +10,7 @@
   --color-bg: #0a0c10; /* tiefes Graphitgrau */
   --color-text: #e8f0fa; /* kühles, klares Weißblau */
   --color-subtext: #94a3b8; /* blaugrau */
-  --color-accent: #00b4ff; /* helles Tech-Cyan */
+  --color-accent: #120a8f; /* helles Tech-Cyan */
   --color-error: #ff4f64;
   --color-success: #36e0a4;
   --color-warning: #f8d57e;
@@ -25,8 +25,10 @@
   --color-border-hover: rgba(255, 255, 255, 0.15);
 
   /* === 🌈 Accent Gradients === */
-  --accent-gradient: linear-gradient(90deg, #00b4ff 0%, #0072ff 100%);
+  --accent-gradient: linear-gradient(90deg, #00b4ff 0%, #120a8f 100%);
   --accent-gradient-hover: linear-gradient(90deg, #00e6a8 0%, #00b4ff 100%);
+   --accent-gradient-start: #00b4ff;
+  --accent-gradient-end: #120a8f;
 
   /* =========================================================
      🌫️ DEPTH SYSTEM – Precision Shadows

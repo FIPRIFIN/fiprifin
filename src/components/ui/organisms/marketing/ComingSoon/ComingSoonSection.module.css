@@ -23,22 +23,20 @@
   align-items: center;
 }
 
-.image {
+.visual img,
+.visual .svg {
   width: 100%;
   max-width: 340px;
   height: auto;
   border-radius: var(--radius-large);
   object-fit: contain;
   box-shadow: var(--shadow-sm);
-  transition: 
+  transition:
     transform var(--motion-slow) var(--ease-soft),
     opacity var(--motion-slow) var(--ease-soft);
 }
 
-.image:hover {
-  transform: scale(1.03);
-  opacity: var(--opacity-hover);
-}
+
 
 /* --- Content / Textbereich --- */
 .content {

@@ -24,6 +24,9 @@
   --accent-gradient: linear-gradient(90deg, #f5a89f 0%, #f3b2a9 100%);
   --accent-gradient-hover: linear-gradient(90deg, #f8d0c8 0%, #f5b1aa 100%);
 
+  --accent-gradient-start: #f5a89f;
+  --accent-gradient-end: #f3b2a9;
+
   /* =========================================================
      🌫️ DEPTH SYSTEM – Ultra Soft Shadows
      --------------------------------------------------------- */
