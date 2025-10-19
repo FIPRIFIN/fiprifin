@@ -1,16 +1,12 @@
 "use client";
-
-import { motion } from "framer-motion";
-
-import Container from "@/components/ui/molecules/layout/Container";
 import BaseFooter from "@/components/ui/molecules/layout/BaseFooter";
 import FooterLinks from "@/components/ui/molecules/navigation/FooterLinks";
 import SocialLinks from "@/components/ui/molecules/socials/SocialLinks";
 import Divider from "@/components/ui/atoms/visuals/Divider";
 import ThemeSwitch from "@/utils/ThemeSwitch";
 import CopyrightNotice from "@/components/ui/atoms/meta/CopyrightNotice";
-
 import styles from "./Footer.module.css";
+import MotionWrapper from "@/components/ui/molecules/visuals/MotionWrapper";
 
 
 export default function Footer() {
@@ -24,13 +20,12 @@ export default function Footer() {
   ];
 
   return (
-    <motion.footer
-      className={styles.footer}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.8, ease: [0.26, 1, 0.36, 1] }}
-    >
+      <MotionWrapper 
+        className={styles.footer} 
+        variant="fadeIn" 
+        delay={0.1} 
+        duration={0.8}
+      >
         <BaseFooter>
           <FooterLinks links={links} />
           <SocialLinks socials={["instagram", "linkedin", "github", "x"]} size={22} />
@@ -38,6 +33,7 @@ export default function Footer() {
           <Divider variant="subtle" width="100%" />
           <CopyrightNotice brand="Verosoma" />
         </BaseFooter>
-    </motion.footer>
+      </MotionWrapper>
+
   );
 }

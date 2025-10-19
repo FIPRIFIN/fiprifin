@@ -19,10 +19,9 @@
 
   /* Keine visuellen Stile mehr hier */
   overflow: hidden;
+  will-change: transform, opacity;
 
-  /* Motion Transition */
-  transition: transform var(--motion-base) var(--ease-soft),
-              opacity var(--motion-base) var(--ease-soft);
+
 }
 
 /* === Responsive Adjustment (optional, falls nötig) === */
